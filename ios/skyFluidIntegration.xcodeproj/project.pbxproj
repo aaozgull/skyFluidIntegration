@@ -10,9 +10,84 @@
 		07FBA89D75DC26912041EB42 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		0C80B921A6F3F58F76C31292 /* libPods-skyFluidIntegration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-skyFluidIntegration.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		66579ADB2E4B0BD20094BCE2 /* Dotmetrics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579ABF2E4B0BD20094BCE2 /* Dotmetrics.framework */; };
+		66579ADF2E4B0BD20094BCE2 /* ComScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AD02E4B0BD20094BCE2 /* ComScore.framework */; };
+		66579AE32E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AD42E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */; };
+		66579AEB2E4B0BD20094BCE2 /* SCORBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 66579AB72E4B0BD20094BCE2 /* SCORBundle.bundle */; };
+		66579AEC2E4B0BD20094BCE2 /* Dotmetrics.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 66579ABD2E4B0BD20094BCE2 /* Dotmetrics.bundle */; };
+		66579AED2E4B0BD20094BCE2 /* AEPCore_Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 66579AA12E4B0BD20094BCE2 /* AEPCore_Resources.bundle */; };
+		66579AEE2E4B0BD20094BCE2 /* SDWebImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 66579ACA2E4B0BD20094BCE2 /* SDWebImage.bundle */; };
+		66579AEF2E4B0BD20094BCE2 /* AEPServices_Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 66579AAE2E4B0BD20094BCE2 /* AEPServices_Resources.bundle */; };
+		66579AF02E4B0BD20094BCE2 /* ReachabilitySwift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 66579AC72E4B0BD20094BCE2 /* ReachabilitySwift.bundle */; };
+		66579AF12E4B0BD20094BCE2 /* CovaticUtilities.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 66579ABB2E4B0BD20094BCE2 /* CovaticUtilities.framework.dSYM */; };
+		66579AF22E4B0BD20094BCE2 /* SerendipityLO.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 66579ACE2E4B0BD20094BCE2 /* SerendipityLO.framework.dSYM */; };
+		66579AF32E4B0C310094BCE2 /* AEPAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579A9D2E4B0BD20094BCE2 /* AEPAnalytics.framework */; };
+		66579AF42E4B0C310094BCE2 /* AEPAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579A9D2E4B0BD20094BCE2 /* AEPAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579AF62E4B0C330094BCE2 /* AEPCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AA02E4B0BD20094BCE2 /* AEPCore.framework */; };
+		66579AF72E4B0C330094BCE2 /* AEPCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AA02E4B0BD20094BCE2 /* AEPCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579AF82E4B0C340094BCE2 /* AEPIdentity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AA42E4B0BD20094BCE2 /* AEPIdentity.framework */; };
+		66579AF92E4B0C340094BCE2 /* AEPIdentity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AA42E4B0BD20094BCE2 /* AEPIdentity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579AFA2E4B0C350094BCE2 /* AEPLifecycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AA72E4B0BD20094BCE2 /* AEPLifecycle.framework */; };
+		66579AFB2E4B0C350094BCE2 /* AEPLifecycle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AA72E4B0BD20094BCE2 /* AEPLifecycle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579AFC2E4B0C3A0094BCE2 /* AEPRulesEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AAA2E4B0BD20094BCE2 /* AEPRulesEngine.framework */; };
+		66579AFD2E4B0C3A0094BCE2 /* AEPRulesEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AAA2E4B0BD20094BCE2 /* AEPRulesEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579AFE2E4B0C3B0094BCE2 /* AEPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AAD2E4B0BD20094BCE2 /* AEPServices.framework */; };
+		66579AFF2E4B0C3B0094BCE2 /* AEPServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AAD2E4B0BD20094BCE2 /* AEPServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B002E4B0C3D0094BCE2 /* AEPSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AB12E4B0BD20094BCE2 /* AEPSignal.framework */; };
+		66579B012E4B0C3D0094BCE2 /* AEPSignal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AB12E4B0BD20094BCE2 /* AEPSignal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B022E4B0C3E0094BCE2 /* AEPUserProfile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AB42E4B0BD20094BCE2 /* AEPUserProfile.framework */; };
+		66579B032E4B0C3E0094BCE2 /* AEPUserProfile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AB42E4B0BD20094BCE2 /* AEPUserProfile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B042E4B0C400094BCE2 /* ComScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AB92E4B0BD20094BCE2 /* ComScore.framework */; };
+		66579B052E4B0C400094BCE2 /* ComScore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AB92E4B0BD20094BCE2 /* ComScore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B062E4B0C420094BCE2 /* CovaticUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579ABA2E4B0BD20094BCE2 /* CovaticUtilities.framework */; };
+		66579B072E4B0C420094BCE2 /* CovaticUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579ABA2E4B0BD20094BCE2 /* CovaticUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B082E4B0C430094BCE2 /* Dotmetrics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AD22E4B0BD20094BCE2 /* Dotmetrics.framework */; };
+		66579B092E4B0C430094BCE2 /* Dotmetrics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AD22E4B0BD20094BCE2 /* Dotmetrics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B0A2E4B0C450094BCE2 /* GoogleInteractiveMediaAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC22E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */; };
+		66579B0B2E4B0C450094BCE2 /* GoogleInteractiveMediaAds.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC22E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B0C2E4B0C470094BCE2 /* Pods_SkyPublisherPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC42E4B0BD20094BCE2 /* Pods_SkyPublisherPlayer.framework */; };
+		66579B0D2E4B0C470094BCE2 /* Pods_SkyPublisherPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC42E4B0BD20094BCE2 /* Pods_SkyPublisherPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B0E2E4B0C490094BCE2 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC62E4B0BD20094BCE2 /* Reachability.framework */; };
+		66579B0F2E4B0C490094BCE2 /* Reachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC62E4B0BD20094BCE2 /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B102E4B0C4A0094BCE2 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579ACB2E4B0BD20094BCE2 /* SDWebImage.framework */; };
+		66579B112E4B0C4A0094BCE2 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579ACB2E4B0BD20094BCE2 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B122E4B0C4C0094BCE2 /* SerendipityLO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579ACD2E4B0BD20094BCE2 /* SerendipityLO.framework */; };
+		66579B132E4B0C4C0094BCE2 /* SerendipityLO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579ACD2E4B0BD20094BCE2 /* SerendipityLO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B162E4B0C4F0094BCE2 /* SkyPublisherPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579A9A2E4B0BC00094BCE2 /* SkyPublisherPlayer.framework */; };
+		66579B172E4B0C4F0094BCE2 /* SkyPublisherPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579A9A2E4B0BC00094BCE2 /* SkyPublisherPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66579AF52E4B0C310094BCE2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				66579AFD2E4B0C3A0094BCE2 /* AEPRulesEngine.framework in Embed Frameworks */,
+				66579AFB2E4B0C350094BCE2 /* AEPLifecycle.framework in Embed Frameworks */,
+				66579B172E4B0C4F0094BCE2 /* SkyPublisherPlayer.framework in Embed Frameworks */,
+				66579B032E4B0C3E0094BCE2 /* AEPUserProfile.framework in Embed Frameworks */,
+				66579B072E4B0C420094BCE2 /* CovaticUtilities.framework in Embed Frameworks */,
+				66579B0D2E4B0C470094BCE2 /* Pods_SkyPublisherPlayer.framework in Embed Frameworks */,
+				66579AF92E4B0C340094BCE2 /* AEPIdentity.framework in Embed Frameworks */,
+				66579AF72E4B0C330094BCE2 /* AEPCore.framework in Embed Frameworks */,
+				66579B0B2E4B0C450094BCE2 /* GoogleInteractiveMediaAds.framework in Embed Frameworks */,
+				66579B052E4B0C400094BCE2 /* ComScore.framework in Embed Frameworks */,
+				66579AF42E4B0C310094BCE2 /* AEPAnalytics.framework in Embed Frameworks */,
+				66579B112E4B0C4A0094BCE2 /* SDWebImage.framework in Embed Frameworks */,
+				66579AFF2E4B0C3B0094BCE2 /* AEPServices.framework in Embed Frameworks */,
+				66579B012E4B0C3D0094BCE2 /* AEPSignal.framework in Embed Frameworks */,
+				66579B092E4B0C430094BCE2 /* Dotmetrics.framework in Embed Frameworks */,
+				66579B132E4B0C4C0094BCE2 /* SerendipityLO.framework in Embed Frameworks */,
+				66579B0F2E4B0C490094BCE2 /* Reachability.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		13B07F961A680F5B00A75B9A /* skyFluidIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skyFluidIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +97,34 @@
 		3B4392A12AC88292D35C810B /* Pods-skyFluidIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skyFluidIntegration.debug.xcconfig"; path = "Target Support Files/Pods-skyFluidIntegration/Pods-skyFluidIntegration.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-skyFluidIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skyFluidIntegration.release.xcconfig"; path = "Target Support Files/Pods-skyFluidIntegration/Pods-skyFluidIntegration.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-skyFluidIntegration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-skyFluidIntegration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66579A9A2E4B0BC00094BCE2 /* SkyPublisherPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SkyPublisherPlayer.framework; sourceTree = "<group>"; };
+		66579A9D2E4B0BD20094BCE2 /* AEPAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEPAnalytics.framework; sourceTree = "<group>"; };
+		66579AA02E4B0BD20094BCE2 /* AEPCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEPCore.framework; sourceTree = "<group>"; };
+		66579AA12E4B0BD20094BCE2 /* AEPCore_Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AEPCore_Resources.bundle; sourceTree = "<group>"; };
+		66579AA42E4B0BD20094BCE2 /* AEPIdentity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEPIdentity.framework; sourceTree = "<group>"; };
+		66579AA72E4B0BD20094BCE2 /* AEPLifecycle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEPLifecycle.framework; sourceTree = "<group>"; };
+		66579AAA2E4B0BD20094BCE2 /* AEPRulesEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEPRulesEngine.framework; sourceTree = "<group>"; };
+		66579AAD2E4B0BD20094BCE2 /* AEPServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEPServices.framework; sourceTree = "<group>"; };
+		66579AAE2E4B0BD20094BCE2 /* AEPServices_Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AEPServices_Resources.bundle; sourceTree = "<group>"; };
+		66579AB12E4B0BD20094BCE2 /* AEPSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEPSignal.framework; sourceTree = "<group>"; };
+		66579AB42E4B0BD20094BCE2 /* AEPUserProfile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AEPUserProfile.framework; sourceTree = "<group>"; };
+		66579AB72E4B0BD20094BCE2 /* SCORBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SCORBundle.bundle; sourceTree = "<group>"; };
+		66579AB92E4B0BD20094BCE2 /* ComScore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ComScore.framework; sourceTree = "<group>"; };
+		66579ABA2E4B0BD20094BCE2 /* CovaticUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CovaticUtilities.framework; sourceTree = "<group>"; };
+		66579ABB2E4B0BD20094BCE2 /* CovaticUtilities.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = CovaticUtilities.framework.dSYM; sourceTree = "<group>"; };
+		66579ABD2E4B0BD20094BCE2 /* Dotmetrics.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Dotmetrics.bundle; sourceTree = "<group>"; };
+		66579ABF2E4B0BD20094BCE2 /* Dotmetrics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dotmetrics.framework; sourceTree = "<group>"; };
+		66579AC22E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInteractiveMediaAds.framework; sourceTree = "<group>"; };
+		66579AC42E4B0BD20094BCE2 /* Pods_SkyPublisherPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pods_SkyPublisherPlayer.framework; sourceTree = "<group>"; };
+		66579AC62E4B0BD20094BCE2 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reachability.framework; sourceTree = "<group>"; };
+		66579AC72E4B0BD20094BCE2 /* ReachabilitySwift.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ReachabilitySwift.bundle; sourceTree = "<group>"; };
+		66579ACA2E4B0BD20094BCE2 /* SDWebImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SDWebImage.bundle; sourceTree = "<group>"; };
+		66579ACB2E4B0BD20094BCE2 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		66579ACD2E4B0BD20094BCE2 /* SerendipityLO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SerendipityLO.framework; sourceTree = "<group>"; };
+		66579ACE2E4B0BD20094BCE2 /* SerendipityLO.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = SerendipityLO.framework.dSYM; sourceTree = "<group>"; };
+		66579AD02E4B0BD20094BCE2 /* ComScore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ComScore.framework; sourceTree = "<group>"; };
+		66579AD22E4B0BD20094BCE2 /* Dotmetrics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dotmetrics.framework; sourceTree = "<group>"; };
+		66579AD42E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInteractiveMediaAds.framework; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = skyFluidIntegration/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = skyFluidIntegration/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -32,6 +135,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66579B162E4B0C4F0094BCE2 /* SkyPublisherPlayer.framework in Frameworks */,
+				66579B002E4B0C3D0094BCE2 /* AEPSignal.framework in Frameworks */,
+				66579AFA2E4B0C350094BCE2 /* AEPLifecycle.framework in Frameworks */,
+				66579AFE2E4B0C3B0094BCE2 /* AEPServices.framework in Frameworks */,
+				66579AFC2E4B0C3A0094BCE2 /* AEPRulesEngine.framework in Frameworks */,
+				66579ADB2E4B0BD20094BCE2 /* Dotmetrics.framework in Frameworks */,
+				66579AF62E4B0C330094BCE2 /* AEPCore.framework in Frameworks */,
+				66579ADF2E4B0BD20094BCE2 /* ComScore.framework in Frameworks */,
+				66579B102E4B0C4A0094BCE2 /* SDWebImage.framework in Frameworks */,
+				66579B082E4B0C430094BCE2 /* Dotmetrics.framework in Frameworks */,
+				66579B0C2E4B0C470094BCE2 /* Pods_SkyPublisherPlayer.framework in Frameworks */,
+				66579AF32E4B0C310094BCE2 /* AEPAnalytics.framework in Frameworks */,
+				66579AE32E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework in Frameworks */,
+				66579B122E4B0C4C0094BCE2 /* SerendipityLO.framework in Frameworks */,
+				66579B0E2E4B0C490094BCE2 /* Reachability.framework in Frameworks */,
+				66579AF82E4B0C340094BCE2 /* AEPIdentity.framework in Frameworks */,
+				66579B062E4B0C420094BCE2 /* CovaticUtilities.framework in Frameworks */,
+				66579B042E4B0C400094BCE2 /* ComScore.framework in Frameworks */,
+				66579B022E4B0C3E0094BCE2 /* AEPUserProfile.framework in Frameworks */,
+				66579B0A2E4B0C450094BCE2 /* GoogleInteractiveMediaAds.framework in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-skyFluidIntegration.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +183,258 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		66579A9C2E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579A9E2E4B0BD20094BCE2 /* AEPAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				66579A9C2E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579A9D2E4B0BD20094BCE2 /* AEPAnalytics.framework */,
+			);
+			path = AEPAnalytics;
+			sourceTree = "<group>";
+		};
+		66579A9F2E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AA22E4B0BD20094BCE2 /* AEPCore */ = {
+			isa = PBXGroup;
+			children = (
+				66579A9F2E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AA02E4B0BD20094BCE2 /* AEPCore.framework */,
+				66579AA12E4B0BD20094BCE2 /* AEPCore_Resources.bundle */,
+			);
+			path = AEPCore;
+			sourceTree = "<group>";
+		};
+		66579AA32E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AA52E4B0BD20094BCE2 /* AEPIdentity */ = {
+			isa = PBXGroup;
+			children = (
+				66579AA32E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AA42E4B0BD20094BCE2 /* AEPIdentity.framework */,
+			);
+			path = AEPIdentity;
+			sourceTree = "<group>";
+		};
+		66579AA62E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AA82E4B0BD20094BCE2 /* AEPLifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				66579AA62E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AA72E4B0BD20094BCE2 /* AEPLifecycle.framework */,
+			);
+			path = AEPLifecycle;
+			sourceTree = "<group>";
+		};
+		66579AA92E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AAB2E4B0BD20094BCE2 /* AEPRulesEngine */ = {
+			isa = PBXGroup;
+			children = (
+				66579AA92E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AAA2E4B0BD20094BCE2 /* AEPRulesEngine.framework */,
+			);
+			path = AEPRulesEngine;
+			sourceTree = "<group>";
+		};
+		66579AAC2E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AAF2E4B0BD20094BCE2 /* AEPServices */ = {
+			isa = PBXGroup;
+			children = (
+				66579AAC2E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AAD2E4B0BD20094BCE2 /* AEPServices.framework */,
+				66579AAE2E4B0BD20094BCE2 /* AEPServices_Resources.bundle */,
+			);
+			path = AEPServices;
+			sourceTree = "<group>";
+		};
+		66579AB02E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AB22E4B0BD20094BCE2 /* AEPSignal */ = {
+			isa = PBXGroup;
+			children = (
+				66579AB02E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AB12E4B0BD20094BCE2 /* AEPSignal.framework */,
+			);
+			path = AEPSignal;
+			sourceTree = "<group>";
+		};
+		66579AB32E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AB52E4B0BD20094BCE2 /* AEPUserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				66579AB32E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AB42E4B0BD20094BCE2 /* AEPUserProfile.framework */,
+			);
+			path = AEPUserProfile;
+			sourceTree = "<group>";
+		};
+		66579AB62E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AB82E4B0BD20094BCE2 /* ComScore */ = {
+			isa = PBXGroup;
+			children = (
+				66579AB62E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AB72E4B0BD20094BCE2 /* SCORBundle.bundle */,
+			);
+			path = ComScore;
+			sourceTree = "<group>";
+		};
+		66579ABC2E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579ABE2E4B0BD20094BCE2 /* Dotmetrics */ = {
+			isa = PBXGroup;
+			children = (
+				66579ABC2E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579ABD2E4B0BD20094BCE2 /* Dotmetrics.bundle */,
+			);
+			path = Dotmetrics;
+			sourceTree = "<group>";
+		};
+		66579AC02E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AC12E4B0BD20094BCE2 /* GoogleAds-IMA-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				66579AC02E4B0BD20094BCE2 /* PackageFrameworks */,
+			);
+			path = "GoogleAds-IMA-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		66579AC32E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AC52E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579AC82E4B0BD20094BCE2 /* ReachabilitySwift */ = {
+			isa = PBXGroup;
+			children = (
+				66579AC52E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AC62E4B0BD20094BCE2 /* Reachability.framework */,
+				66579AC72E4B0BD20094BCE2 /* ReachabilitySwift.bundle */,
+			);
+			path = ReachabilitySwift;
+			sourceTree = "<group>";
+		};
+		66579AC92E4B0BD20094BCE2 /* PackageFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PackageFrameworks;
+			sourceTree = "<group>";
+		};
+		66579ACC2E4B0BD20094BCE2 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				66579AC92E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579ACA2E4B0BD20094BCE2 /* SDWebImage.bundle */,
+				66579ACB2E4B0BD20094BCE2 /* SDWebImage.framework */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		66579AD12E4B0BD20094BCE2 /* ComScore */ = {
+			isa = PBXGroup;
+			children = (
+				66579AD02E4B0BD20094BCE2 /* ComScore.framework */,
+			);
+			path = ComScore;
+			sourceTree = "<group>";
+		};
+		66579AD32E4B0BD20094BCE2 /* Dotmetrics */ = {
+			isa = PBXGroup;
+			children = (
+				66579AD22E4B0BD20094BCE2 /* Dotmetrics.framework */,
+			);
+			path = Dotmetrics;
+			sourceTree = "<group>";
+		};
+		66579AD52E4B0BD20094BCE2 /* GoogleAds-IMA-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				66579AD42E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */,
+			);
+			path = "GoogleAds-IMA-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		66579AD62E4B0BD20094BCE2 /* XCFrameworkIntermediates */ = {
+			isa = PBXGroup;
+			children = (
+				66579AD12E4B0BD20094BCE2 /* ComScore */,
+				66579AD32E4B0BD20094BCE2 /* Dotmetrics */,
+				66579AD52E4B0BD20094BCE2 /* GoogleAds-IMA-iOS-SDK */,
+			);
+			path = XCFrameworkIntermediates;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +445,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				66579A9A2E4B0BC00094BCE2 /* SkyPublisherPlayer.framework */,
 				13B07FAE1A68108700A75B9A /* skyFluidIntegration */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -85,6 +461,29 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* skyFluidIntegration.app */,
+				66579A9E2E4B0BD20094BCE2 /* AEPAnalytics */,
+				66579AA22E4B0BD20094BCE2 /* AEPCore */,
+				66579AA52E4B0BD20094BCE2 /* AEPIdentity */,
+				66579AA82E4B0BD20094BCE2 /* AEPLifecycle */,
+				66579AAB2E4B0BD20094BCE2 /* AEPRulesEngine */,
+				66579AAF2E4B0BD20094BCE2 /* AEPServices */,
+				66579AB22E4B0BD20094BCE2 /* AEPSignal */,
+				66579AB52E4B0BD20094BCE2 /* AEPUserProfile */,
+				66579AB82E4B0BD20094BCE2 /* ComScore */,
+				66579AB92E4B0BD20094BCE2 /* ComScore.framework */,
+				66579ABA2E4B0BD20094BCE2 /* CovaticUtilities.framework */,
+				66579ABB2E4B0BD20094BCE2 /* CovaticUtilities.framework.dSYM */,
+				66579ABE2E4B0BD20094BCE2 /* Dotmetrics */,
+				66579ABF2E4B0BD20094BCE2 /* Dotmetrics.framework */,
+				66579AC12E4B0BD20094BCE2 /* GoogleAds-IMA-iOS-SDK */,
+				66579AC22E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */,
+				66579AC32E4B0BD20094BCE2 /* PackageFrameworks */,
+				66579AC42E4B0BD20094BCE2 /* Pods_SkyPublisherPlayer.framework */,
+				66579AC82E4B0BD20094BCE2 /* ReachabilitySwift */,
+				66579ACC2E4B0BD20094BCE2 /* SDWebImage */,
+				66579ACD2E4B0BD20094BCE2 /* SerendipityLO.framework */,
+				66579ACE2E4B0BD20094BCE2 /* SerendipityLO.framework.dSYM */,
+				66579AD62E4B0BD20094BCE2 /* XCFrameworkIntermediates */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +511,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				66579AF52E4B0C310094BCE2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +560,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				66579AEB2E4B0BD20094BCE2 /* SCORBundle.bundle in Resources */,
+				66579AEC2E4B0BD20094BCE2 /* Dotmetrics.bundle in Resources */,
+				66579AED2E4B0BD20094BCE2 /* AEPCore_Resources.bundle in Resources */,
+				66579AEE2E4B0BD20094BCE2 /* SDWebImage.bundle in Resources */,
+				66579AEF2E4B0BD20094BCE2 /* AEPServices_Resources.bundle in Resources */,
+				66579AF02E4B0BD20094BCE2 /* ReachabilitySwift.bundle in Resources */,
+				66579AF12E4B0BD20094BCE2 /* CovaticUtilities.framework.dSYM in Resources */,
+				66579AF22E4B0BD20094BCE2 /* SerendipityLO.framework.dSYM in Resources */,
 				07FBA89D75DC26912041EB42 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +668,25 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VP7T3HYA3;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AEPLifecycle",
+					"$(PROJECT_DIR)/XCFrameworkIntermediates/Dotmetrics",
+					"$(PROJECT_DIR)/SDWebImage",
+					"$(PROJECT_DIR)/AEPAnalytics",
+					"$(PROJECT_DIR)/AEPUserProfile",
+					"$(PROJECT_DIR)/XCFrameworkIntermediates/ComScore",
+					"$(PROJECT_DIR)/XCFrameworkIntermediates/GoogleAds-IMA-iOS-SDK",
+					"$(PROJECT_DIR)/AEPCore",
+					"$(PROJECT_DIR)/AEPServices",
+					"$(PROJECT_DIR)/AEPSignal",
+					"$(PROJECT_DIR)/ReachabilitySwift",
+					"$(PROJECT_DIR)/AEPRulesEngine",
+					"$(PROJECT_DIR)/AEPIdentity",
+				);
 				INFOPLIST_FILE = skyFluidIntegration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -288,6 +714,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VP7T3HYA3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AEPLifecycle",
+					"$(PROJECT_DIR)/XCFrameworkIntermediates/Dotmetrics",
+					"$(PROJECT_DIR)/SDWebImage",
+					"$(PROJECT_DIR)/AEPAnalytics",
+					"$(PROJECT_DIR)/AEPUserProfile",
+					"$(PROJECT_DIR)/XCFrameworkIntermediates/ComScore",
+					"$(PROJECT_DIR)/XCFrameworkIntermediates/GoogleAds-IMA-iOS-SDK",
+					"$(PROJECT_DIR)/AEPCore",
+					"$(PROJECT_DIR)/AEPServices",
+					"$(PROJECT_DIR)/AEPSignal",
+					"$(PROJECT_DIR)/ReachabilitySwift",
+					"$(PROJECT_DIR)/AEPRulesEngine",
+					"$(PROJECT_DIR)/AEPIdentity",
+				);
 				INFOPLIST_FILE = skyFluidIntegration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -376,10 +820,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -448,10 +889,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

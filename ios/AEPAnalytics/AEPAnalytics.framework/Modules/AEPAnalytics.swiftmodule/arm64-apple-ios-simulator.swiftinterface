@@ -1,0 +1,43 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios14.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature OpaqueTypeErasure -enable-bare-slash-regex -module-name AEPAnalytics
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+@_exported import AEPAnalytics
+import AEPCore
+import AEPServices
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
+@available(tvOSApplicationExtension, unavailable)
+@objc(AEPMobileAnalytics) public class Analytics : AEPAnalytics.AnalyticsBase {
+  @objc required public init?(runtime: any AEPCore.ExtensionRuntime)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(AEPMobileAnalyticsAppExtension) public class AnalyticsAppExtension : AEPAnalytics.AnalyticsBase {
+  @objc required public init?(runtime: any AEPCore.ExtensionRuntime)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class AnalyticsBase : ObjectiveC.NSObject, AEPCore.Extension {
+  @objc final public let runtime: any AEPCore.ExtensionRuntime
+  @objc final public let name: Swift.String
+  @objc final public let friendlyName: Swift.String
+  @objc public static let extensionVersion: Swift.String
+  @objc final public let metadata: [Swift.String : Swift.String]?
+  @objc required public init?(runtime: any AEPCore.ExtensionRuntime)
+  @objc public func onRegistered()
+  @objc public func onUnregistered()
+  @objc public func readyForEvent(_ event: AEPCore.Event) -> Swift.Bool
+  @objc deinit
+}
+@objc extension AEPAnalytics.AnalyticsBase {
+  @objc(clearQueue) public static func clearQueue()
+  @objc(getQueueSize:) public static func getQueueSize(completion: @escaping (Swift.Int, (any Swift.Error)?) -> Swift.Void)
+  @objc(sendQueuedHits) public static func sendQueuedHits()
+  @objc(getTrackingIdentifier:) public static func getTrackingIdentifier(completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  @objc(getVisitorIdentifier:) public static func getVisitorIdentifier(completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  @objc(setVisitorIdentifier:) public static func setVisitorIdentifier(visitorIdentifier: Swift.String)
+}

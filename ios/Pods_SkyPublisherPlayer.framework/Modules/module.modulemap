@@ -1,0 +1,6 @@
+framework module Pods_SkyPublisherPlayer {
+  umbrella header "Pods-SkyPublisherPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

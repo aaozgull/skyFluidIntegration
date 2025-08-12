@@ -1,0 +1,3394 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "AEPUserProfile",
+    "printedName": "AEPUserProfile",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "AEPCore",
+        "printedName": "AEPCore",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile"
+      },
+      {
+        "kind": "Import",
+        "name": "AEPCore",
+        "printedName": "AEPCore",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AEPServices",
+        "printedName": "AEPServices",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UserProfile",
+        "printedName": "UserProfile",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "LOG_TAG",
+            "printedName": "LOG_TAG",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14AEPUserProfile04UserB0C7LOG_TAGSSvpZ",
+            "mangledName": "$s14AEPUserProfile04UserB0C7LOG_TAGSSvpZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14AEPUserProfile04UserB0C7LOG_TAGSSvgZ",
+                "mangledName": "$s14AEPUserProfile04UserB0C7LOG_TAGSSvgZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(py)name",
+            "mangledName": "$s14AEPUserProfile04UserB0C4nameSSvp",
+            "moduleName": "AEPUserProfile",
+            "objc_name": "name",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "ObjC",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)name",
+                "mangledName": "$s14AEPUserProfile04UserB0C4nameSSvg",
+                "moduleName": "AEPUserProfile",
+                "implicit": true,
+                "objc_name": "name",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "friendlyName",
+            "printedName": "friendlyName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(py)friendlyName",
+            "mangledName": "$s14AEPUserProfile04UserB0C12friendlyNameSSvp",
+            "moduleName": "AEPUserProfile",
+            "objc_name": "friendlyName",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "ObjC",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)friendlyName",
+                "mangledName": "$s14AEPUserProfile04UserB0C12friendlyNameSSvg",
+                "moduleName": "AEPUserProfile",
+                "implicit": true,
+                "objc_name": "friendlyName",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "extensionVersion",
+            "printedName": "extensionVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(cpy)extensionVersion",
+            "mangledName": "$s14AEPUserProfile04UserB0C16extensionVersionSSvpZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "objc_name": "extensionVersion",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "ObjC",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(cm)extensionVersion",
+                "mangledName": "$s14AEPUserProfile04UserB0C16extensionVersionSSvgZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "implicit": true,
+                "objc_name": "extensionVersion",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "metadata",
+            "printedName": "metadata",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(py)metadata",
+            "mangledName": "$s14AEPUserProfile04UserB0C8metadataSDyS2SGSgvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "objc_name": "metadata",
+            "declAttributes": [
+              "HasInitialValue",
+              "ObjC",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Swift.String]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Swift.String]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)metadata",
+                "mangledName": "$s14AEPUserProfile04UserB0C8metadataSDyS2SGSgvg",
+                "moduleName": "AEPUserProfile",
+                "implicit": true,
+                "isOpen": true,
+                "objc_name": "metadata",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Swift.String]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Swift.String]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)setMetadata:",
+                "mangledName": "$s14AEPUserProfile04UserB0C8metadataSDyS2SGSgvs",
+                "moduleName": "AEPUserProfile",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14AEPUserProfile04UserB0C8metadataSDyS2SGSgvM",
+                "mangledName": "$s14AEPUserProfile04UserB0C8metadataSDyS2SGSgvM",
+                "moduleName": "AEPUserProfile",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "runtime",
+            "printedName": "runtime",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ExtensionRuntime",
+                "printedName": "any AEPCore.ExtensionRuntime",
+                "usr": "c:@M@AEPCore@objc(pl)AEPExtensionRuntime"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(py)runtime",
+            "mangledName": "$s14AEPUserProfile04UserB0C7runtime7AEPCore16ExtensionRuntime_pvp",
+            "moduleName": "AEPUserProfile",
+            "objc_name": "runtime",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ExtensionRuntime",
+                    "printedName": "any AEPCore.ExtensionRuntime",
+                    "usr": "c:@M@AEPCore@objc(pl)AEPExtensionRuntime"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)runtime",
+                "mangledName": "$s14AEPUserProfile04UserB0C7runtime7AEPCore16ExtensionRuntime_pvg",
+                "moduleName": "AEPUserProfile",
+                "implicit": true,
+                "objc_name": "runtime",
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(runtime:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserProfile",
+                "printedName": "AEPUserProfile.UserProfile",
+                "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ExtensionRuntime",
+                "printedName": "any AEPCore.ExtensionRuntime",
+                "usr": "c:@M@AEPCore@objc(pl)AEPExtensionRuntime"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)initWithRuntime:",
+            "mangledName": "$s14AEPUserProfile04UserB0C7runtimeAC7AEPCore16ExtensionRuntime_p_tcfc",
+            "moduleName": "AEPUserProfile",
+            "objc_name": "initWithRuntime:",
+            "declAttributes": [
+              "ObjC",
+              "Required",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "onRegistered",
+            "printedName": "onRegistered()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)onRegistered",
+            "mangledName": "$s14AEPUserProfile04UserB0C12onRegisteredyyF",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "objc_name": "onRegistered",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onUnregistered",
+            "printedName": "onUnregistered()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)onUnregistered",
+            "mangledName": "$s14AEPUserProfile04UserB0C14onUnregisteredyyF",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "objc_name": "onUnregistered",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "readyForEvent",
+            "printedName": "readyForEvent(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Event",
+                "printedName": "AEPCore.Event",
+                "usr": "c:@M@AEPCore@objc(cs)AEPEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)readyForEvent:",
+            "mangledName": "$s14AEPUserProfile04UserB0C13readyForEventySb7AEPCore0F0CF",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "objc_name": "readyForEvent:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserProfile",
+                "printedName": "AEPUserProfile.UserProfile",
+                "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile(im)init",
+            "mangledName": "$s14AEPUserProfile04UserB0CACycfc",
+            "moduleName": "AEPUserProfile",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "updateUserAttributes",
+            "printedName": "updateUserAttributes(attributeDict:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AEPUserProfile@objc(cs)AEPMobileUserProfile(cm)updateUserAttributesWithAttributeDict:",
+            "mangledName": "$s14AEPUserProfile04UserB0C06updateC10Attributes13attributeDictySDySSypG_tFZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeUserAttributes",
+            "printedName": "removeUserAttributes(attributeNames:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AEPUserProfile@objc(cs)AEPMobileUserProfile(cm)removeUserAttributesWithAttributeNames:",
+            "mangledName": "$s14AEPUserProfile04UserB0C06removeC10Attributes14attributeNamesySaySSG_tFZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserAttributes",
+            "printedName": "getUserAttributes(attributeNames:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([Swift.String : Any]?, AEPCore.AEPError) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "([Swift.String : Any]?, AEPCore.AEPError)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[Swift.String : Any]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Dictionary",
+                            "printedName": "[Swift.String : Any]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ProtocolComposition",
+                                "printedName": "Any"
+                              }
+                            ],
+                            "usr": "s:SD"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AEPError",
+                        "printedName": "AEPCore.AEPError",
+                        "usr": "c:@M@AEPCore@E@AEPError"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@AEPUserProfile@objc(cs)AEPMobileUserProfile(cm)getUserAttributesWithAttributeNames:completion:",
+            "mangledName": "$s14AEPUserProfile04UserB0C03getC10Attributes14attributeNames10completionySaySSG_ySDySSypGSg_7AEPCore8AEPErrorOtctFZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AEPUserProfile@objc(cs)AEPMobileUserProfile",
+        "mangledName": "$s14AEPUserProfile04UserB0C",
+        "moduleName": "AEPUserProfile",
+        "isOpen": true,
+        "objc_name": "AEPMobileUserProfile",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Extension",
+            "printedName": "Extension",
+            "usr": "c:@M@AEPCore@objc(pl)AEPExtension",
+            "mangledName": "$s7AEPCore9ExtensionP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AEPCore",
+        "printedName": "AEPCore",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AEPServices",
+        "printedName": "AEPServices",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UserProfileConstants",
+        "printedName": "UserProfileConstants",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "EXTENSION_NAME",
+            "printedName": "EXTENSION_NAME",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO14EXTENSION_NAMESSvpZ",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO14EXTENSION_NAMESSvpZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO14EXTENSION_NAMESSvgZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO14EXTENSION_NAMESSvgZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "FRIENDLY_NAME",
+            "printedName": "FRIENDLY_NAME",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO13FRIENDLY_NAMESSvpZ",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO13FRIENDLY_NAMESSvpZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO13FRIENDLY_NAMESSvgZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO13FRIENDLY_NAMESSvgZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "EXTENSION_VERSION",
+            "printedName": "EXTENSION_VERSION",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO17EXTENSION_VERSIONSSvpZ",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO17EXTENSION_VERSIONSSvpZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO17EXTENSION_VERSIONSSvgZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO17EXTENSION_VERSIONSSvgZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "LOG_PREFIX",
+            "printedName": "LOG_PREFIX",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO10LOG_PREFIXSSvpZ",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO10LOG_PREFIXSSvpZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO10LOG_PREFIXSSvgZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO10LOG_PREFIXSSvgZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "DATASTORE_NAME",
+            "printedName": "DATASTORE_NAME",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO14DATASTORE_NAMESSvpZ",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO14DATASTORE_NAMESSvpZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO14DATASTORE_NAMESSvgZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO14DATASTORE_NAMESSvgZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "DATASTORE_KEY_ATTRIBUTES",
+            "printedName": "DATASTORE_KEY_ATTRIBUTES",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO24DATASTORE_KEY_ATTRIBUTESSSvpZ",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO24DATASTORE_KEY_ATTRIBUTESSSvpZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO24DATASTORE_KEY_ATTRIBUTESSSvgZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO24DATASTORE_KEY_ATTRIBUTESSSvgZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "V5Migration",
+            "printedName": "V5Migration",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "USER_PROFILE_KEY",
+                "printedName": "USER_PROFILE_KEY",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO11V5MigrationO16USER_PROFILE_KEYSSvpZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11V5MigrationO16USER_PROFILE_KEYSSvpZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11V5MigrationO16USER_PROFILE_KEYSSvgZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11V5MigrationO16USER_PROFILE_KEYSSvgZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO11V5MigrationO",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11V5MigrationO",
+            "moduleName": "AEPUserProfile",
+            "isEnumExhaustive": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "BitwiseCopyable",
+                "printedName": "BitwiseCopyable",
+                "usr": "s:s15BitwiseCopyableP",
+                "mangledName": "$ss15BitwiseCopyableP"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Configuration",
+            "printedName": "Configuration",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "NAME",
+                "printedName": "NAME",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO13ConfigurationO4NAMESSvpZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO13ConfigurationO4NAMESSvpZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO13ConfigurationO4NAMESSvgZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO13ConfigurationO4NAMESSvgZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO13ConfigurationO",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO13ConfigurationO",
+            "moduleName": "AEPUserProfile",
+            "isEnumExhaustive": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "BitwiseCopyable",
+                "printedName": "BitwiseCopyable",
+                "usr": "s:s15BitwiseCopyableP",
+                "mangledName": "$ss15BitwiseCopyableP"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "UserProfile",
+            "printedName": "UserProfile",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "EVENT_NAME_UPDATE_USER_PROFILE",
+                "printedName": "EVENT_NAME_UPDATE_USER_PROFILE",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O30EVENT_NAME_UPDATE_USER_PROFILESSvpZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O30EVENT_NAME_UPDATE_USER_PROFILESSvpZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O30EVENT_NAME_UPDATE_USER_PROFILESSvgZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O30EVENT_NAME_UPDATE_USER_PROFILESSvgZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "EVENT_NAME_GET_USER_PROFILE",
+                "printedName": "EVENT_NAME_GET_USER_PROFILE",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O27EVENT_NAME_GET_USER_PROFILESSvpZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O27EVENT_NAME_GET_USER_PROFILESSvpZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O27EVENT_NAME_GET_USER_PROFILESSvgZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O27EVENT_NAME_GET_USER_PROFILESSvgZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "EVENT_NAME_REMOVE_USER_PROFILE",
+                "printedName": "EVENT_NAME_REMOVE_USER_PROFILE",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O30EVENT_NAME_REMOVE_USER_PROFILESSvpZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O30EVENT_NAME_REMOVE_USER_PROFILESSvpZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O30EVENT_NAME_REMOVE_USER_PROFILESSvgZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O30EVENT_NAME_REMOVE_USER_PROFILESSvgZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeDecl",
+                "name": "EventDataKeys",
+                "printedName": "EventDataKeys",
+                "children": [
+                  {
+                    "kind": "Var",
+                    "name": "UPDATE_DATA",
+                    "printedName": "UPDATE_DATA",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO11UPDATE_DATASSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO11UPDATE_DATASSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO11UPDATE_DATASSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO11UPDATE_DATASSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "REMOVE_DATA",
+                    "printedName": "REMOVE_DATA",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO11REMOVE_DATASSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO11REMOVE_DATASSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO11REMOVE_DATASSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO11REMOVE_DATASSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "GET_DATA_ATTRIBUTES",
+                    "printedName": "GET_DATA_ATTRIBUTES",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO19GET_DATA_ATTRIBUTESSSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO19GET_DATA_ATTRIBUTESSSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO19GET_DATA_ATTRIBUTESSSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO19GET_DATA_ATTRIBUTESSSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "USERPROFILE_DATA",
+                    "printedName": "USERPROFILE_DATA",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO16USERPROFILE_DATASSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO16USERPROFILE_DATASSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO16USERPROFILE_DATASSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO16USERPROFILE_DATASSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "ERROR_RESPONSE",
+                    "printedName": "ERROR_RESPONSE",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO14ERROR_RESPONSESSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO14ERROR_RESPONSESSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO14ERROR_RESPONSESSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO14ERROR_RESPONSESSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "ERROR_MESSAGE",
+                    "printedName": "ERROR_MESSAGE",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO13ERROR_MESSAGESSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO13ERROR_MESSAGESSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO13ERROR_MESSAGESSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO13ERROR_MESSAGESSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Enum",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O13EventDataKeysO",
+                "moduleName": "AEPUserProfile",
+                "isEnumExhaustive": true,
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Sendable",
+                    "printedName": "Sendable",
+                    "usr": "s:s8SendableP",
+                    "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "BitwiseCopyable",
+                    "printedName": "BitwiseCopyable",
+                    "usr": "s:s15BitwiseCopyableP",
+                    "mangledName": "$ss15BitwiseCopyableP"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO0cB0O",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO0cB0O",
+            "moduleName": "AEPUserProfile",
+            "isEnumExhaustive": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "BitwiseCopyable",
+                "printedName": "BitwiseCopyable",
+                "usr": "s:s15BitwiseCopyableP",
+                "mangledName": "$ss15BitwiseCopyableP"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "RulesEngine",
+            "printedName": "RulesEngine",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "CONSEQUENCE_KEY_CSP",
+                "printedName": "CONSEQUENCE_KEY_CSP",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO19CONSEQUENCE_KEY_CSPSSvpZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO19CONSEQUENCE_KEY_CSPSSvpZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO19CONSEQUENCE_KEY_CSPSSvgZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO19CONSEQUENCE_KEY_CSPSSvgZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "CONSEQUENCE_OPERATION_WRITE",
+                "printedName": "CONSEQUENCE_OPERATION_WRITE",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO27CONSEQUENCE_OPERATION_WRITESSvpZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO27CONSEQUENCE_OPERATION_WRITESSvpZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO27CONSEQUENCE_OPERATION_WRITESSvgZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO27CONSEQUENCE_OPERATION_WRITESSvgZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "CONSEQUENCE_OPERATION_DELETE",
+                "printedName": "CONSEQUENCE_OPERATION_DELETE",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO28CONSEQUENCE_OPERATION_DELETESSvpZ",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO28CONSEQUENCE_OPERATION_DELETESSvpZ",
+                "moduleName": "AEPUserProfile",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO28CONSEQUENCE_OPERATION_DELETESSvgZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO28CONSEQUENCE_OPERATION_DELETESSvgZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "implicit": true,
+                    "declAttributes": [
+                      "Transparent"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeDecl",
+                "name": "EventDataKeys",
+                "printedName": "EventDataKeys",
+                "children": [
+                  {
+                    "kind": "Var",
+                    "name": "TRIGGERED_CONSEQUENCE",
+                    "printedName": "TRIGGERED_CONSEQUENCE",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO21TRIGGERED_CONSEQUENCESSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO21TRIGGERED_CONSEQUENCESSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO21TRIGGERED_CONSEQUENCESSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO21TRIGGERED_CONSEQUENCESSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "ID",
+                    "printedName": "ID",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO2IDSSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO2IDSSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO2IDSSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO2IDSSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "DETAIL",
+                    "printedName": "DETAIL",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO6DETAILSSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO6DETAILSSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO6DETAILSSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO6DETAILSSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "TYPE",
+                    "printedName": "TYPE",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO4TYPESSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO4TYPESSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO4TYPESSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO4TYPESSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "DETAIL_KEY",
+                    "printedName": "DETAIL_KEY",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO10DETAIL_KEYSSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO10DETAIL_KEYSSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO10DETAIL_KEYSSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO10DETAIL_KEYSSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "DETAIL_VALUE",
+                    "printedName": "DETAIL_VALUE",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO12DETAIL_VALUESSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO12DETAIL_VALUESSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO12DETAIL_VALUESSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO12DETAIL_VALUESSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "DETAIL_OPERATION",
+                    "printedName": "DETAIL_OPERATION",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO16DETAIL_OPERATIONSSvpZ",
+                    "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO16DETAIL_OPERATIONSSvpZ",
+                    "moduleName": "AEPUserProfile",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO16DETAIL_OPERATIONSSvgZ",
+                        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO16DETAIL_OPERATIONSSvgZ",
+                        "moduleName": "AEPUserProfile",
+                        "static": true,
+                        "implicit": true,
+                        "declAttributes": [
+                          "Transparent"
+                        ],
+                        "accessorKind": "get"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Enum",
+                "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO",
+                "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO13EventDataKeysO",
+                "moduleName": "AEPUserProfile",
+                "isEnumExhaustive": true,
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Sendable",
+                    "printedName": "Sendable",
+                    "usr": "s:s8SendableP",
+                    "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "BitwiseCopyable",
+                    "printedName": "BitwiseCopyable",
+                    "usr": "s:s15BitwiseCopyableP",
+                    "mangledName": "$ss15BitwiseCopyableP"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:14AEPUserProfile04UserB9ConstantsO11RulesEngineO",
+            "mangledName": "$s14AEPUserProfile04UserB9ConstantsO11RulesEngineO",
+            "moduleName": "AEPUserProfile",
+            "isEnumExhaustive": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "BitwiseCopyable",
+                "printedName": "BitwiseCopyable",
+                "usr": "s:s15BitwiseCopyableP",
+                "mangledName": "$ss15BitwiseCopyableP"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:14AEPUserProfile04UserB9ConstantsO",
+        "mangledName": "$s14AEPUserProfile04UserB9ConstantsO",
+        "moduleName": "AEPUserProfile",
+        "isEnumExhaustive": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BitwiseCopyable",
+            "printedName": "BitwiseCopyable",
+            "usr": "s:s15BitwiseCopyableP",
+            "mangledName": "$ss15BitwiseCopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AEPCore",
+        "printedName": "AEPCore",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AEPServices",
+        "printedName": "AEPServices",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AEPUserProfile"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UserProfileV5Migrator",
+        "printedName": "UserProfileV5Migrator",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "existingAttributes",
+            "printedName": "existingAttributes()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14AEPUserProfile04UserB10V5MigratorO18existingAttributesSDySSypGSgyFZ",
+            "mangledName": "$s14AEPUserProfile04UserB10V5MigratorO18existingAttributesSDySSypGSgyFZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearExistingAttributes",
+            "printedName": "clearExistingAttributes()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14AEPUserProfile04UserB10V5MigratorO23clearExistingAttributesyyFZ",
+            "mangledName": "$s14AEPUserProfile04UserB10V5MigratorO23clearExistingAttributesyyFZ",
+            "moduleName": "AEPUserProfile",
+            "static": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:14AEPUserProfile04UserB10V5MigratorO",
+        "mangledName": "$s14AEPUserProfile04UserB10V5MigratorO",
+        "moduleName": "AEPUserProfile",
+        "isEnumExhaustive": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BitwiseCopyable",
+            "printedName": "BitwiseCopyable",
+            "usr": "s:s15BitwiseCopyableP",
+            "mangledName": "$ss15BitwiseCopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Event",
+        "printedName": "Event",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isUpdateAttributesEvent",
+            "printedName": "isUpdateAttributesEvent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AEPCore5EventC14AEPUserProfileE018isUpdateAttributesB0Sbvp",
+            "mangledName": "$s7AEPCore5EventC14AEPUserProfileE018isUpdateAttributesB0Sbvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AEPCore5EventC14AEPUserProfileE018isUpdateAttributesB0Sbvg",
+                "mangledName": "$s7AEPCore5EventC14AEPUserProfileE018isUpdateAttributesB0Sbvg",
+                "moduleName": "AEPUserProfile",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isGetAttributesEvent",
+            "printedName": "isGetAttributesEvent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AEPCore5EventC14AEPUserProfileE015isGetAttributesB0Sbvp",
+            "mangledName": "$s7AEPCore5EventC14AEPUserProfileE015isGetAttributesB0Sbvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AEPCore5EventC14AEPUserProfileE015isGetAttributesB0Sbvg",
+                "mangledName": "$s7AEPCore5EventC14AEPUserProfileE015isGetAttributesB0Sbvg",
+                "moduleName": "AEPUserProfile",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isRulesConsequenceEvent",
+            "printedName": "isRulesConsequenceEvent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AEPCore5EventC14AEPUserProfileE018isRulesConsequenceB0Sbvp",
+            "mangledName": "$s7AEPCore5EventC14AEPUserProfileE018isRulesConsequenceB0Sbvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AEPCore5EventC14AEPUserProfileE018isRulesConsequenceB0Sbvg",
+                "mangledName": "$s7AEPCore5EventC14AEPUserProfileE018isRulesConsequenceB0Sbvg",
+                "moduleName": "AEPUserProfile",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "consequenceType",
+            "printedName": "consequenceType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AEPCore5EventC14AEPUserProfileE15consequenceTypeSSSgvp",
+            "mangledName": "$s7AEPCore5EventC14AEPUserProfileE15consequenceTypeSSSgvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AEPCore5EventC14AEPUserProfileE15consequenceTypeSSSgvg",
+                "mangledName": "$s7AEPCore5EventC14AEPUserProfileE15consequenceTypeSSSgvg",
+                "moduleName": "AEPUserProfile",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "detailKey",
+            "printedName": "detailKey",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AEPCore5EventC14AEPUserProfileE9detailKeySSSgvp",
+            "mangledName": "$s7AEPCore5EventC14AEPUserProfileE9detailKeySSSgvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AEPCore5EventC14AEPUserProfileE9detailKeySSSgvg",
+                "mangledName": "$s7AEPCore5EventC14AEPUserProfileE9detailKeySSSgvg",
+                "moduleName": "AEPUserProfile",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "detailValue",
+            "printedName": "detailValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AEPCore5EventC14AEPUserProfileE11detailValueSSSgvp",
+            "mangledName": "$s7AEPCore5EventC14AEPUserProfileE11detailValueSSSgvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AEPCore5EventC14AEPUserProfileE11detailValueSSSgvg",
+                "mangledName": "$s7AEPCore5EventC14AEPUserProfileE11detailValueSSSgvg",
+                "moduleName": "AEPUserProfile",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "detailOperation",
+            "printedName": "detailOperation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AEPCore5EventC14AEPUserProfileE15detailOperationSSSgvp",
+            "mangledName": "$s7AEPCore5EventC14AEPUserProfileE15detailOperationSSSgvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AEPCore5EventC14AEPUserProfileE15detailOperationSSSgvg",
+                "mangledName": "$s7AEPCore5EventC14AEPUserProfileE15detailOperationSSSgvg",
+                "moduleName": "AEPUserProfile",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isErrorResponseEvent",
+            "printedName": "isErrorResponseEvent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AEPCore5EventC14AEPUserProfileE015isErrorResponseB0Sbvp",
+            "mangledName": "$s7AEPCore5EventC14AEPUserProfileE015isErrorResponseB0Sbvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AEPCore5EventC14AEPUserProfileE015isErrorResponseB0Sbvg",
+                "mangledName": "$s7AEPCore5EventC14AEPUserProfileE015isErrorResponseB0Sbvg",
+                "moduleName": "AEPUserProfile",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "errorMessage",
+            "printedName": "errorMessage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7AEPCore5EventC14AEPUserProfileE12errorMessageSSSgvp",
+            "mangledName": "$s7AEPCore5EventC14AEPUserProfileE12errorMessageSSSgvp",
+            "moduleName": "AEPUserProfile",
+            "isOpen": true,
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7AEPCore5EventC14AEPUserProfileE12errorMessageSSSgvg",
+                "mangledName": "$s7AEPCore5EventC14AEPUserProfileE12errorMessageSSSgvg",
+                "moduleName": "AEPUserProfile",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AEPCore@objc(cs)AEPEvent",
+        "mangledName": "$s7AEPCore5EventC",
+        "moduleName": "AEPCore",
+        "isOpen": true,
+        "objc_name": "AEPEvent",
+        "declAttributes": [
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfile.swift",
+      "kind": "StringLiteral",
+      "offset": 757,
+      "length": 13,
+      "value": "\"UserProfile\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 682,
+      "length": 30,
+      "value": "\"com.adobe.module.userProfile\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 744,
+      "length": 13,
+      "value": "\"UserProfile\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 793,
+      "length": 7,
+      "value": "\"5.0.0\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 933,
+      "length": 12,
+      "value": "\"attributes\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1008,
+      "length": 35,
+      "value": "\"Adobe.ADBUserProfile.user_profile\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1102,
+      "length": 32,
+      "value": "\"com.adobe.module.configuration\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1217,
+      "length": 19,
+      "value": "\"UserProfileUpdate\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1286,
+      "length": 19,
+      "value": "\"getUserAttributes\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1358,
+      "length": 20,
+      "value": "\"RemoveUserProfiles\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1445,
+      "length": 22,
+      "value": "\"userprofileupdatekey\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1505,
+      "length": 23,
+      "value": "\"userprofileremovekeys\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1574,
+      "length": 26,
+      "value": "\"userprofilegetattributes\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1643,
+      "length": 17,
+      "value": "\"userprofiledata\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1701,
+      "length": 15,
+      "value": "\"errorresponse\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1756,
+      "length": 17,
+      "value": "\"errormessagekey\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1855,
+      "length": 5,
+      "value": "\"csp\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1910,
+      "length": 7,
+      "value": "\"write\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1968,
+      "length": 8,
+      "value": "\"delete\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2053,
+      "length": 22,
+      "value": "\"triggeredconsequence\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2104,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2141,
+      "length": 8,
+      "value": "\"detail\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2180,
+      "length": 6,
+      "value": "\"type\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2223,
+      "length": 5,
+      "value": "\"key\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2267,
+      "length": 7,
+      "value": "\"value\""
+    },
+    {
+      "filePath": "\/Users\/m.hashim\/Desktop\/waheed\/SkyFluid-Mobile\/SkyPublisherPlayerSDK\/Pods\/AEPUserProfile\/AEPUserProfile\/Sources\/UserProfileConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2317,
+      "length": 11,
+      "value": "\"operation\""
+    }
+  ]
+}

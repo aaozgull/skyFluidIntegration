@@ -1,0 +1,11 @@
+framework module AEPAnalytics {
+  umbrella header "AEPAnalytics-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module AEPAnalytics.Swift {
+  header "AEPAnalytics-Swift.h"
+  requires objc
+}

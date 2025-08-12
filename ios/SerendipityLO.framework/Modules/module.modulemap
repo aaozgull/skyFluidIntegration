@@ -1,0 +1,4 @@
+framework module SerendipityLO {
+  header "SerendipityLO-Swift.h"
+  requires objc
+}

@@ -1,0 +1,2249 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name CovaticUtilities
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import Accelerate
+import SystemConfiguration.CaptiveNetwork
+import Compression
+import CoreData
+import CoreLocation
+import CoreML
+@_exported import CovaticUtilities
+import Foundation
+import NaturalLanguage
+import NetworkExtension
+import Swift
+import SystemConfiguration
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import simd
+@available(iOS 15, *)
+public typealias LineIterator = Foundation.AsyncLineSequence<Foundation.URL.AsyncBytes>.AsyncIterator
+public struct Line {
+  public let lineNumber: Swift.Int
+  public let data: [Swift.String?]
+}
+@available(iOS 15, *)
+public struct CSVParser : _Concurrency.AsyncSequence, _Concurrency.AsyncIteratorProtocol {
+  public typealias Element = CovaticUtilities.Line
+  public init(url: Foundation.URL, seperator: Swift.Character = ",")
+  public mutating func next() async throws -> CovaticUtilities.Line?
+  public func makeAsyncIterator() -> CovaticUtilities.CSVParser
+  @available(iOS 15, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  public typealias AsyncIterator = CovaticUtilities.CSVParser
+  #if compiler(>=5.3) && $AssociatedTypeImplements
+  @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
+  @_implements(_Concurrency.AsyncIteratorProtocol, Failure) public typealias __AsyncIteratorProtocol_Failure = any Swift.Error
+  #else
+  @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
+  public typealias __AsyncIteratorProtocol_Failure = any Swift.Error
+  #endif
+  #if compiler(>=5.3) && $AssociatedTypeImplements
+  @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
+  @_implements(_Concurrency.AsyncSequence, Failure) public typealias __AsyncSequence_Failure = any Swift.Error
+  #else
+  @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
+  public typealias __AsyncSequence_Failure = any Swift.Error
+  #endif
+}
+public struct PostNotification {
+  public init(name: Foundation.Notification.Name, object: Any? = nil)
+}
+public struct Binomial : CovaticUtilities.RandomVariable {
+  public let min: Swift.Int
+  public var max: Swift.Int {
+    get
+  }
+  public let population: Swift.Int
+  public let probability: Swift.Double
+  public func probability(of x: Swift.Int) -> Swift.Double
+  public func expected() -> Swift.Double
+  public func variance() -> Swift.Double
+  public func random() -> Swift.Int
+  public typealias Interval = Swift.Int
+}
+public protocol RandomVariable {
+  associatedtype Interval
+  var min: Self.Interval { get }
+  var max: Self.Interval { get }
+  func probability(of x: Self.Interval) -> Swift.Double
+  func expected() -> Swift.Double
+  func variance() -> Swift.Double
+  func standardDeviation() -> Swift.Double
+}
+extension CovaticUtilities.RandomVariable where Self.Interval == Swift.Int {
+  public func distribution(_ relation: CovaticUtilities.Relation<Self.Interval>) -> Swift.Double
+}
+extension CovaticUtilities.RandomVariable {
+  public func standardDeviation() -> Swift.Double
+}
+public enum Relation<T> where T : Swift.Strideable {
+  case equal(to: T)
+  case greater(than: T)
+  case greaterThanOrEqual(to: T)
+  case less(than: T)
+  case lessThanOrEqual(to: T)
+  case between(T, and: T)
+  public func range(min: T, max: T) -> Swift.Range<T>
+}
+@_hasMissingDesignatedInitializers public class AppSharing {
+  public static let shared: CovaticUtilities.AppSharing
+  public enum Operation {
+    case create
+    case delete
+    public static func == (a: CovaticUtilities.AppSharing.Operation, b: CovaticUtilities.AppSharing.Operation) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public typealias completionTask = (_ status: Swift.Bool, _ message: Swift.String) -> Swift.Void
+  public func retrieveSharedApps(CompletionHandler: CovaticUtilities.AppSharing.completionTask?) -> [CovaticUtilities.SharedApp]?
+  public func operation(mode: CovaticUtilities.AppSharing.Operation, CompletionHandler: @escaping CovaticUtilities.AppSharing.completionTask)
+  @objc deinit
+}
+public struct SharedApp : Swift.Codable, Swift.Equatable {
+  public static func == (lhs: CovaticUtilities.SharedApp, rhs: CovaticUtilities.SharedApp) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CovaticUtilsSDK {
+  public static let versionString: Swift.String
+}
+public typealias ValuesDistribution = ((_ values: [Swift.Double]) -> (valMean: Swift.Double, valStDev: Swift.Double)?)
+public class Bayesian {
+  public init()
+  public func trainNaiveBayesContinous(distribution: CovaticUtilities.ValuesDistribution? = trainGaussian, data: [[Swift.Double]], observedCases: [Swift.Int]) -> [Swift.Int : [Swift.Int : (valMean: Swift.Double, valStDev: Swift.Double)]]
+  public func trainNaiveBayesMultinomial(data: [[Swift.Int]], observedCases: [Swift.Int]) -> [Swift.Int : [Swift.Int : [Swift.Int : Swift.Double]]]
+  @objc deinit
+}
+public func trainGaussian(values: [Swift.Double]) -> (valMean: Swift.Double, valStDev: Swift.Double)?
+public func getNormalisedLikelihoods(pA: [Swift.Int : Swift.Double], pGivenA: [(Swift.Int, [Swift.Double])]) -> [(Swift.Int, Swift.Double)]
+public func getNormalisedLikelihoodsDict(pA: [Swift.Int : Swift.Double], pGivenA: [Swift.Int : [Swift.Double]]) -> [Swift.Int : Swift.Double]
+public func getPriorsFrom(classes: [Swift.Int]) -> [Swift.Int : Swift.Double]
+@available(iOS 13.0, *)
+public class PListReader {
+  public init(_ plistName: Swift.String? = "Info", bundle: Foundation.Bundle?)
+  public func getProperty(key: Swift.String) -> Any?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class FileQueue {
+  public func writeToFile(data: Foundation.Data, fileName: Swift.String, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  public func readFromFile(fileName: Swift.String, completion: @escaping (Foundation.Data?, (any Swift.Error)?) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+public class DictionaryPersistedQueue<ElementKey, ElementValue> where ElementKey : Swift.Decodable, ElementKey : Swift.Encodable, ElementKey : Swift.Hashable, ElementValue : Swift.Decodable, ElementValue : Swift.Encodable {
+  convenience public init(name: Swift.String)
+  public func insert(key: ElementKey, value: ElementValue)
+  public func update(key: ElementKey, value: ElementValue)
+  public func update(elements: [ElementKey : ElementValue])
+  public func replace(_ newDict: [ElementKey : ElementValue])
+  public func getAllKeys() -> [ElementKey]?
+  public func getAllValues() -> [ElementValue]?
+  public func getCopy() -> [ElementKey : ElementValue]?
+  public func fetchValueFor(key: ElementKey) -> ElementValue?
+  public func isEmpty() -> Swift.Bool
+  public func areValuesEmpty() -> Swift.Bool
+  public func remove(key: ElementKey) -> ElementValue?
+  public func removeValueFor(key: ElementKey)
+  public func removeAll()
+  @objc deinit
+}
+@available(iOS 13.0, *)
+extension CovaticUtilities.DictionaryPersistedQueue where ElementValue : Swift.Comparable {
+  public func filter(key: ElementValue) -> [ElementKey : ElementValue]?
+}
+public protocol ManagedObjectConvertible {
+  associatedtype ManagedObject : CoreData.NSManagedObject, CovaticUtilities.ManagedObjectProtocol
+  func toManagedObject(in context: CoreData.NSManagedObjectContext) -> Self.ManagedObject?
+}
+public protocol ManagedObjectUpdateable : CovaticUtilities.ManagedObjectConvertible {
+  func updateEntity(entity: CoreData.NSManagedObject?)
+}
+public protocol ManagedObjectOverwritable : CovaticUtilities.ManagedObjectConvertible {
+  func overwriteEntity(entity: CoreData.NSManagedObject?)
+}
+public func applyKernelConvolution(hist: [Swift.Double]) -> [Swift.Double]
+public func getNieghborsXYGeneric<T>(eps: Swift.Double, point: T, points: [T]) -> [T] where T : CovaticUtilities.MultiClusterProtocol
+public func getNieghborsNativeGeneric<T>(eps: Swift.Double, point: T, points: [T]) -> [T] where T : CovaticUtilities.MultiClusterProtocol
+public func getNieghborsSystemNative(eps: Swift.Double, point: CoreLocation.CLLocation, points: [CoreLocation.CLLocation]) -> [CoreLocation.CLLocation]
+public func protoClustersDistanceFunction<T>(eps: Swift.Double, point: T, points: [T]) -> [T] where T : CovaticUtilities.MultiClusterProtocol
+public func getClusterCenterPointData(selectedCluster: CovaticUtilities.MultiCluster<CovaticUtilities.PointLocation>)
+public func getClusterCenterPointDataV2(selectedCluster: CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>)
+public func getClusterCenterPointDataBasicV2(selectedCluster: CovaticUtilities.MultiCluster<CovaticUtilities.PointLocation>)
+public func getClusterOuterPoint(selectedCluster: CovaticUtilities.MultiCluster<CovaticUtilities.PointLocation>)
+public func getClusterStDevFrom(center: CovaticUtilities.PointLocation, selectedCluster: CovaticUtilities.MultiCluster<CovaticUtilities.PointLocation>) -> Swift.Double
+public func getTemporalNieghbors<T>(eps: Swift.Double, point: T, points: [T]) -> [T] where T : CovaticUtilities.MultiClusterProtocol
+public func getPlacemarkDataFor(location: CoreLocation.CLLocation, completionHandler: @escaping (CoreLocation.CLPlacemark?) -> Swift.Void)
+public func getHaversineDistanceBetween(pointA: CovaticUtilities.XYCoord, pointB: CovaticUtilities.XYCoord) -> Swift.Double
+public func getSummedVincentyDistance(location: CovaticUtilities.PointLocation, cluster: [CovaticUtilities.PointLocation]) -> Swift.Double
+public func getVincentyDistance(lat1: Swift.Double, lon1: Swift.Double, lat2: Swift.Double, lon2: Swift.Double) -> Swift.Double
+@_hasMissingDesignatedInitializers public class TimeUtilities {
+  public static let sharedInstance: CovaticUtilities.TimeUtilities
+  public var customCalendar: Foundation.Calendar {
+    get
+    set
+  }
+  public var defaultCalendar: Foundation.Calendar {
+    get
+    set
+  }
+  public var utcCalendar: Foundation.Calendar {
+    get
+    set
+  }
+  public var defaultCalendarTimeZone: Swift.String {
+    get
+    set
+  }
+  public func getStartOfUTC(date: Foundation.Date) -> Foundation.Date
+  public func getISO8601DateFormatter() -> Foundation.ISO8601DateFormatter
+  public func getBasicDateFormatter() -> Foundation.DateFormatter
+  public func getCalendar() -> Foundation.Calendar
+  public func getDateWithTimeZone() -> (date: Foundation.Date, timeZone: Swift.String)
+  public func getTimeZone() -> Swift.String
+  public func getStartOfToday() -> Foundation.Date
+  public func getStartOfTomorrow() -> Foundation.Date
+  public func getStartOfYesterday() -> Foundation.Date
+  public func getStartOf(date: Foundation.Date) -> Foundation.Date
+  public func increment(date: Foundation.Date?, by: Swift.Int = 1, withTimeZone: Swift.String = Calendar.current.timeZone.identifier) -> Foundation.Date?
+  public func getISO8601ExportStringFor(date: Foundation.Date, timeZoneId: Swift.String = Calendar.current.timeZone.identifier) -> Swift.String
+  public func getISO8601ExportUTCStringFor(date: Foundation.Date) -> Swift.String
+  public func getISODateFormattedFrom(string: Swift.String, timeZoneId: Swift.String = Calendar.current.timeZone.identifier) -> Foundation.Date?
+  public func getDateFormattedFrom(string: Swift.String, timeZoneId: Swift.String = Calendar.current.timeZone.identifier) -> Foundation.Date?
+  public func secondsToHoursMinutesSeconds(_ seconds: Swift.Int) -> (hours: Swift.Int, minutes: Swift.Int, seconds: Swift.Int)
+  public func weekday(forDate: Foundation.Date) -> Swift.Int
+  public func adjust(date: Foundation.Date, by: Swift.Int, forUnit: Foundation.Calendar.Component, withTimeZone: Swift.String = Calendar.current.timeZone.identifier) -> Foundation.Date?
+  public func minutesSinceMidnight(date: Foundation.Date, withTimeZone: Swift.String = Calendar.current.timeZone.identifier) -> Swift.Int
+  public func secondsSinceMidnightUTC(date: Foundation.Date) -> Swift.Int
+  public func secondsSinceMidnightUTCToDate(seconds: Swift.Double, forDate: Foundation.Date = Date()) -> Foundation.Date?
+  public func secondsSinceMidnightToDate(seconds: Swift.Double, forDate: Foundation.Date = Date(), withTimeZone: Swift.String = Calendar.current.timeZone.identifier) -> Foundation.Date?
+  public func secondsSinceMidnight(date: Foundation.Date, withTimeZone: Swift.String = Calendar.current.timeZone.identifier) -> Swift.Int
+  public func getIntervalBetween(recentDate: Foundation.Date, furthestDate: Foundation.Date, forUnits: Swift.Set<Foundation.Calendar.Component>, withTimeZone: Swift.String = Calendar.current.timeZone.identifier) -> Foundation.DateComponents?
+  @objc deinit
+}
+@available(iOS 13.0, *)
+public func runTemporalDBSCAN(clusters: CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>) -> [CovaticUtilities.MultiCluster<CovaticUtilities.PointLocation>]
+extension Swift.Array {
+  public var second: Element? {
+    get
+  }
+  public var secondToLast: Element? {
+    get
+  }
+  public func takeElements(elementCount: Swift.Int) -> Swift.Array<Element>
+  public func dictionary<Key, Value>(withKey key: Swift.KeyPath<Element, Key>, value: Swift.KeyPath<Element, Value>) -> [Key : Value] where Key : Swift.Hashable
+}
+extension Swift.Array where Element : Swift.FloatingPoint {
+  public var sum: Element {
+    get
+  }
+  public var mean: Element {
+    get
+  }
+  public var variance: Element {
+    get
+  }
+  public var standardDeviation: Element {
+    get
+  }
+}
+extension Swift.Array where Element : Swift.FloatingPoint {
+  public func stdev() -> Element
+}
+extension Swift.Array where Element == Swift.Double {
+  public var zscored: [Swift.Double] {
+    get
+  }
+}
+extension Swift.Collection where Self.Element == Swift.String {
+  public var asDoubleArray: [Swift.Double] {
+    get
+  }
+}
+extension Swift.Collection where Self.Element == Swift.Int {
+  public var asDoubleArray: [Swift.Double] {
+    get
+  }
+}
+extension Swift.Array where Element : Swift.Equatable {
+  public mutating func remove(_ object: Element)
+  public mutating func removeObjects(_ array: [Element])
+}
+extension Swift.Array where Element : Swift.Comparable {
+  public var range: (min: Element, max: Element)? {
+    get
+  }
+}
+extension Swift.Array where Element : Swift.Comparable, Element : Swift.Hashable {
+  public func difference(from other: [Element]) -> [Element]
+}
+extension Swift.Array where Element : Swift.Comparable, Element : Swift.Hashable {
+  public func diff(from other: [Element]) -> [Element]
+}
+extension Swift.Array where Element : Swift.Hashable {
+  public func intersectingElements(with elements: [Element]) -> [Element]
+}
+extension Swift.Array where Element : Swift.Hashable {
+  public func partitionedIntersection(with elements: [Element]) -> (intersection: [Element], nonMatching: [Element])
+}
+extension Swift.Array where Element : Swift.Hashable {
+  public func partitionedIntersectionBoth(with elements: [Element]) -> (intersection: [Element], nonMatchingInOrigin: [Element], nonMatchingInElements: [Element])
+}
+extension Swift.Array {
+  public func partitionedIntersection<T>(with elements: [Element], keySelector: (Element) -> T) -> (intersection: [Element], nonMatching: [Element]) where T : Swift.Hashable
+}
+extension Swift.Array where Element : Swift.Comparable, Element : Swift.Hashable {
+  public func isSubset(from other: [Element]) -> Swift.Bool
+}
+extension Swift.Array where Element : Swift.Comparable, Element : Swift.Hashable {
+  public func uniques() -> Swift.Set<Element>
+}
+extension Swift.Array where Element == [Swift.Double] {
+  public func split(on index: Swift.Int, value: Swift.Double) -> ([[Swift.Double]], [[Swift.Double]])
+}
+extension Swift.Array where Element == Swift.Double {
+  public func split(on index: Swift.Int, value: Swift.Double) -> ([Swift.Double], [Swift.Double])
+}
+extension Swift.Array where Element == [Swift.Int] {
+  public func split(on index: Swift.Int, value: Swift.Int) -> ([[Swift.Int]], [[Swift.Int]])
+}
+extension Swift.Array where Element == Swift.Int {
+  public func split(on index: Swift.Int, value: Swift.Int) -> ([Swift.Int], [Swift.Int])
+}
+extension Swift.Array where Element == Swift.Double {
+  public func dot(_ weights: [[Element]]) -> [Element]
+}
+public enum BinIndexError : Swift.String, Swift.Error {
+  case negativeBinWidths
+  case valueBeforeHistStart
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct WooWindows : Swift.Codable {
+  public let windows: [CovaticUtilities.BaseWindow]
+  public var debug_data: CovaticUtilities.PredictedActualWindow?
+  public init(windows: [CovaticUtilities.BaseWindow], debug_data: CovaticUtilities.PredictedActualWindow? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PredictedActualWindow : Swift.Codable {
+  public var predictedWooDates: [Foundation.Date : [CovaticUtilities.ActualWindow]]
+  public init(predictedWooDates: [Foundation.Date : [CovaticUtilities.ActualWindow]] = [Date: [ActualWindow]]())
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ActualWindow : Swift.Codable {
+  public let startDate: Foundation.Date
+  public let endDate: Foundation.Date
+  public init(startDate: Foundation.Date, endDate: Foundation.Date)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BaseWindow : Swift.Codable {
+  public let start: Swift.Double
+  public let end: Swift.Double
+  public init(start: Swift.Double, end: Swift.Double)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Extrema {
+  public let extremaPostition: Swift.Double
+  public let isMaximum: Swift.Bool
+  public init(extremaPostition: Swift.Double, isMaximum: Swift.Bool)
+}
+public struct WooRange : Swift.CustomStringConvertible {
+  public let start: Swift.Double
+  public let end: Swift.Double
+  public init?(start: Swift.Double, end: Swift.Double)
+  public var description: Swift.String {
+    get
+  }
+  public func toDict() -> Swift.Dictionary<Swift.String, Swift.Double>
+}
+extension Swift.Int {
+  public var boolValue: Swift.Bool {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public struct MobileProvisioning : Swift.Decodable {
+  public var name: Swift.String
+  public var appIDName: Swift.String
+  public var platform: [Swift.String]
+  public var isXcodeManaged: Swift.Bool?
+  public var creationDate: Foundation.Date
+  public var expirationDate: Foundation.Date
+  public var entitlements: CovaticUtilities.MobileProvisioning.Entitlements
+  public struct Entitlements : Swift.Decodable {
+    public let keychainAccessGroups: [Swift.String]
+    public let getTaskAllow: Swift.Bool
+    public let apsEnvironment: CovaticUtilities.MobileProvisioning.Entitlements.Environment
+    public enum Environment : Swift.String, Swift.Decodable {
+      case development, production, disabled
+      public init?(rawValue: Swift.String)
+      @available(iOS 13.0, *)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public init(keychainAccessGroups: Swift.Array<Swift.String>, getTaskAllow: Swift.Bool, apsEnvironment: CovaticUtilities.MobileProvisioning.Entitlements.Environment)
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 13.0, *)
+extension CovaticUtilities.MobileProvisioning {
+  public static func read() -> CovaticUtilities.MobileProvisioning?
+  public static func read(from profilePath: Swift.String) -> CovaticUtilities.MobileProvisioning?
+  public static func extractLinesFrom(string: Swift.String, scanUpTo: Swift.String) -> [Swift.String]
+  public static func extractLinesFrom(string: Swift.String, scanUpTo: Foundation.CharacterSet = .newlines) -> [Swift.String]
+}
+@available(iOS 13.0, *)
+public class CovaticClusteringManager {
+  public init()
+  public func runK2DBscan(clusterType: CovaticUtilities.ClusterType, locations: [CovaticUtilities.PointLocation]) -> [CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>]?
+  public func recursiveDBSCAN2(eps: Swift.Double, minPts: Swift.Int) -> (CovaticUtilities.ClusterType, [CovaticUtilities.PointLocation], Swift.Int?) -> ([CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>]?, CovaticUtilities.NoiseCluster<CovaticUtilities.PointLocation>?)
+  public func runGreedyClustering(locations: [CovaticUtilities.PointLocation], epsValue: Swift.Double = 75.0, minClusterPoints: Swift.Int = 7) -> [CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>]
+  public func runClusteringTemporal(clustersActual: [CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>], epsValue: Swift.Double = 30, minClusterPoints: Swift.Int = 7) -> [CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>]
+  @objc deinit
+}
+public typealias ErrorHandler = ((any Swift.Error)?) -> Swift.Void
+public protocol KeychainConfigurationProtocol {
+  var sharedServiceName: Swift.String { get }
+  var serviceName: Swift.String { get }
+  var accessGroup: Swift.String? { get }
+}
+@_hasMissingDesignatedInitializers public class SecureSession {
+  public var keychainConfig: (any CovaticUtilities.KeychainConfigurationProtocol)?
+  public static let sharedInstance: CovaticUtilities.SecureSession
+  public func retrieveAppCredentials(key: Swift.String) -> Swift.String?
+  public func saveAppCredentails(key: Swift.String, value: Swift.String?)
+  public func deleteAppKeychain(key: Swift.String)
+  public func retrieveSharedItem(key: Swift.String) -> Swift.String?
+  public func saveSharedItem(key: Swift.String, value: Swift.String?)
+  public func deleteSharedItem(key: Swift.String)
+  public func retrieveItem(withService: Swift.String, forKey: Swift.String) -> Swift.String?
+  public func saveItem(withService: Swift.String, forKey: Swift.String, value: Swift.String)
+  public func deleteItem(withService: Swift.String, forKey: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class FunctionTypeHandler<ElementIn, ElementOut> {
+  public typealias HandlerTypeBlock = (ElementIn) -> (ElementOut)
+  public func readFromHandler(identifier: Swift.String) -> CovaticUtilities.FunctionTypeHandler<ElementIn, ElementOut>.HandlerTypeBlock?
+  public func addtoHandler(identifier: Swift.String, handler: @escaping CovaticUtilities.FunctionTypeHandler<ElementIn, ElementOut>.HandlerTypeBlock)
+  public func removeFromHandler(identifier: Swift.String)
+  public func evaluateAllFor(element: ElementIn) -> [Swift.String : ElementOut]
+  public func returnFirst(element: ElementIn) -> (ElementOut)?
+  public func callAllWith(element: ElementIn)
+  public func callFuncWith(identifier: Swift.String, element: ElementIn) -> ElementOut?
+  public func runOnAllFirstEval(element: ElementIn, passedFunc: ([Swift.String : ElementOut]) -> Swift.Void)
+  public func runOnAll(element: ElementIn, passedFunc: (_ String: ElementOut) -> Swift.Void)
+  public func runOnAll2(passedFunc: ([Swift.String : CovaticUtilities.FunctionTypeHandler<ElementIn, ElementOut>.HandlerTypeBlock]) -> Swift.Void)
+  @objc deinit
+}
+public protocol LruDataCacheProtocol {
+  func fetchDataFrom(dataUrl: Foundation.URL, completionHandler: @escaping (Swift.Result<Foundation.Data, CovaticUtilities.NetworkError>) -> Swift.Void)
+  func fetchDataFrom(dataStringUrl: Swift.String, completionHandler: @escaping (Swift.Result<Foundation.Data?, CovaticUtilities.NetworkError>) -> Swift.Void)
+  func cancelDataQueue()
+}
+public class LruDataCache : CovaticUtilities.LruDataCacheProtocol {
+  public init()
+  @objc deinit
+  public func fetchDataFrom(dataStringUrl: Swift.String, completionHandler: @escaping (Swift.Result<Foundation.Data?, CovaticUtilities.NetworkError>) -> Swift.Void)
+  public func fetchDataFrom(dataUrl: Foundation.URL, completionHandler: @escaping (Swift.Result<Foundation.Data, CovaticUtilities.NetworkError>) -> Swift.Void)
+  public func cancelDataQueue()
+}
+extension Foundation.Calendar {
+  public func startOfDay(byAdding component: Foundation.Calendar.Component, value: Swift.Int, to date: Foundation.Date, wrappingComponents: Swift.Bool = false) -> Foundation.Date?
+}
+extension Foundation.Calendar {
+  public func numberOfDaysBetween(_ from: Foundation.Date, and to: Foundation.Date) -> Swift.Int?
+  public func numberOfYearsBetween(_ from: Foundation.Date, and to: Foundation.Date) -> Swift.Int?
+}
+@_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+public class CoreDataTestWrapper {
+  final public let coordinator: CovaticUtilities.TestCoreDataCoordinator
+  public static let sharedInstance: CovaticUtilities.CoreDataTestWrapper
+  public func initaliseCoreData()
+  @objc deinit
+}
+extension Swift.String {
+  public var underline: Foundation.NSAttributedString {
+    get
+  }
+  public var strikethrough: Foundation.NSAttributedString {
+    get
+  }
+  public var italic: Foundation.NSAttributedString {
+    get
+  }
+}
+extension Swift.String {
+  public static func * (lhs: Swift.String, rhs: Swift.Int) -> Swift.String
+  public static func * (lhs: Swift.Int, rhs: Swift.String) -> Swift.String
+}
+public struct KeychainPasswordItem {
+  public init(service: Swift.String, account: Swift.String, accessGroup: Swift.String? = nil, label: Swift.String? = nil)
+  public func readPassword() throws -> Swift.String
+  public func savePassword(_ password: Swift.String) throws
+  public mutating func renameAccount(_ newAccountName: Swift.String) throws
+  public func deleteItem() throws
+  public static func passwordItems(forService service: Swift.String, accessGroup: Swift.String? = nil) throws -> [CovaticUtilities.KeychainPasswordItem]
+  public func saveInternetPassword(password: Swift.String, server: Swift.String) throws
+  public func readInternetPassword(server: Swift.String) throws -> Swift.String
+  public func deleteInternetPassword(server: Swift.String) throws
+}
+public protocol ManagedObjectProtocol {
+  associatedtype Entity
+  func toEntity() -> Self.Entity?
+}
+extension CovaticUtilities.ManagedObjectProtocol where Self : CoreData.NSManagedObject {
+  public static func insertNew(in context: CoreData.NSManagedObjectContext) -> Self
+}
+open class ConfigurationManager {
+  public init()
+  public func storeData<T>(object: T, withFileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType) -> Foundation.URL? where T : Swift.Encodable
+  public func store(data: Foundation.Data, withFileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType) -> Foundation.URL?
+  public func retrieveData(fromFileName: Swift.String, withExtension: Swift.String) -> Foundation.Data?
+  public func retrieveData<T>(object: T.Type, fromFileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType) -> T? where T : Swift.Decodable
+  public func storeDataAsJson2<T>(data: T, withFileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType) -> Foundation.URL? where T : Swift.Encodable
+  public func deleteObject(from fileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType)
+  @objc deinit
+}
+public class ProcessDemographicData {
+  public init()
+  public func process(name: Swift.String, completionHandler: (Swift.String?) -> Swift.Void)
+  @objc deinit
+}
+public func getAverageBinPosition(value: Swift.Int, prevIndex: Swift.Int) -> Swift.Double
+public func getLocalExtrema(diffHist: [Swift.Double]) -> [CovaticUtilities.Extrema]
+extension Foundation.Data {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+}
+extension Foundation.Data {
+  public func string(encoding: Swift.String.Encoding) -> Swift.String?
+  public func jsonObject(options: Foundation.JSONSerialization.ReadingOptions = []) throws -> Any
+}
+final public class LinkedList<T> {
+  @_hasMissingDesignatedInitializers public class LinkedListNode {
+    @objc deinit
+  }
+  public typealias Node = CovaticUtilities.LinkedList<T>.LinkedListNode
+  public init()
+  final public var isEmpty: Swift.Bool {
+    get
+  }
+  final public var first: CovaticUtilities.LinkedList<T>.Node? {
+    get
+  }
+  final public var last: CovaticUtilities.LinkedList<T>.Node? {
+    get
+  }
+  final public var count: Swift.Int {
+    get
+  }
+  final public func node(atIndex index: Swift.Int) -> CovaticUtilities.LinkedList<T>.Node?
+  final public subscript(index: Swift.Int) -> T {
+    get
+  }
+  final public func append(_ value: T)
+  final public func append(_ node: CovaticUtilities.LinkedList<T>.Node)
+  final public func append(_ list: CovaticUtilities.LinkedList<T>)
+  final public func insert(_ value: T, atIndex index: Swift.Int)
+  final public func insert(_ node: CovaticUtilities.LinkedList<T>.Node, atIndex index: Swift.Int)
+  final public func insert(_ list: CovaticUtilities.LinkedList<T>, atIndex index: Swift.Int)
+  final public func removeAll()
+  @discardableResult
+  final public func remove(node: CovaticUtilities.LinkedList<T>.Node) -> T
+  @discardableResult
+  final public func removeLast() -> T
+  @discardableResult
+  final public func remove(atIndex index: Swift.Int) -> T
+  @objc deinit
+}
+extension CovaticUtilities.LinkedList : Swift.CustomStringConvertible {
+  final public var description: Swift.String {
+    get
+  }
+}
+extension CovaticUtilities.LinkedList {
+  final public func reverse()
+}
+extension CovaticUtilities.LinkedList {
+  final public func map<U>(transform: (T) -> U) -> CovaticUtilities.LinkedList<U>
+  final public func filter(predicate: (T) -> Swift.Bool) -> CovaticUtilities.LinkedList<T>
+}
+extension CovaticUtilities.LinkedList {
+  convenience public init(array: Swift.Array<T>)
+}
+extension CovaticUtilities.LinkedList : Swift.ExpressibleByArrayLiteral {
+  convenience public init(arrayLiteral elements: T...)
+  public typealias ArrayLiteralElement = T
+}
+extension Foundation.Data {
+  public func compress(withAlgorithm algo: Foundation.Data.CompressionAlgorithm) -> Foundation.Data?
+  public func decompress(withAlgorithm algo: Foundation.Data.CompressionAlgorithm) -> Foundation.Data?
+  public enum CompressionAlgorithm {
+    case zlib
+    case lzfse
+    case lzma
+    case lz4
+    public static func == (a: Foundation.Data.CompressionAlgorithm, b: Foundation.Data.CompressionAlgorithm) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public func deflate() -> Foundation.Data?
+  public func inflate() -> Foundation.Data?
+  public func zip() -> Foundation.Data?
+  public func unzip(skipCheckSumValidation: Swift.Bool = true) -> Foundation.Data?
+  public func gzip() -> Foundation.Data?
+  public func gunzip() -> Foundation.Data?
+  public func adler32() -> CovaticUtilities.Adler32
+  public func crc32() -> CovaticUtilities.Crc32
+  public func zip() throws -> Foundation.Data
+}
+public struct Crc32 : Swift.CustomStringConvertible {
+  public init()
+  public var checksum: Swift.UInt32
+  public mutating func advance(withChunk chunk: Foundation.Data)
+  public var description: Swift.String {
+    get
+  }
+}
+public struct Adler32 : Swift.CustomStringConvertible {
+  public init()
+  public var checksum: Swift.UInt32
+  public mutating func advance(withChunk chunk: Foundation.Data)
+  public var description: Swift.String {
+    get
+  }
+}
+extension Foundation.URL {
+  public func zip(toFileAt dest: Foundation.URL? = nil) throws -> Foundation.URL
+}
+public class PointLocation : CovaticUtilities.MultiClusterProtocol {
+  public var clusterReference: Swift.String? {
+    get
+    set
+  }
+  public var xyPosition: CovaticUtilities.XYCoord {
+    get
+    set
+  }
+  final public let accuracy: Swift.Double
+  public var count: Swift.Int
+  public var location: CoreLocation.CLLocation
+  public var vanillaPointStatus: CovaticUtilities.PointStatus
+  public var protoPointStatus: CovaticUtilities.PointStatus
+  public var temporalPointStatus: CovaticUtilities.PointStatus
+  final public let timeStamp: Foundation.Date
+  public var distanceFromCentroid: Swift.Double
+  public subscript(centroid: CoreLocation.CLLocation) -> Swift.Double {
+    get
+  }
+  public subscript(mean: Swift.Double, stdev: Swift.Double) -> Swift.Double {
+    get
+  }
+  public func setPointStaus(type: CovaticUtilities.ClusterType, status: CovaticUtilities.PointStatus)
+  public func getPointStaus(type: CovaticUtilities.ClusterType) -> CovaticUtilities.PointStatus
+  public init(timeStamp: Foundation.Date, latitude: Swift.Double, longitude: Swift.Double, accuracy: Swift.Double)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (lhs: CovaticUtilities.PointLocation, rhs: CovaticUtilities.PointLocation) -> Swift.Bool
+  public func getMatchingPredicate() -> Foundation.NSPredicate
+  public static func getMatchingPredicateStale(date: Foundation.Date) -> Foundation.NSPredicate
+  public static func getMatchingVisitPredicate(date: Foundation.Date) -> Foundation.NSPredicate
+  @objc deinit
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Swift.Array where Element : Swift.Comparable {
+  public func argmax() -> (Swift.Int, Element)
+  public func argsort(by areInIncreasingOrder: (Element, Element) -> Swift.Bool) -> [Swift.Array<Element>.Index]
+  public func gather(indices: [Swift.Array<Element>.Index]) -> [Element]
+}
+extension CoreLocation.CLLocationCoordinate2D : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension CoreLocation.CLLocationCoordinate2D {
+  public func location(for bearing: Swift.Double, and distanceMeters: Swift.Double) -> CoreLocation.CLLocationCoordinate2D
+  public func distance(from: CoreLocation.CLLocationCoordinate2D) -> CoreLocation.CLLocationDistance
+}
+extension CoreLocation.CLCircularRegion {
+  public func intersect(for region: CoreLocation.CLCircularRegion) -> Swift.Bool
+}
+extension CoreLocation.CLLocation {
+  public class func midLocation(start: CoreLocation.CLLocation, end: CoreLocation.CLLocation) -> CoreLocation.CLLocation
+  public func midLocation(to point: CoreLocation.CLLocation) -> CoreLocation.CLLocation
+}
+public enum CodingError : Swift.Error {
+  case encodingError
+  case decodingError
+  public static func == (a: CovaticUtilities.CodingError, b: CovaticUtilities.CodingError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias DecodingFunc<T> = (T.Type, Foundation.Data) -> T? where T : Swift.Decodable, T : Swift.Encodable
+public typealias EncodingFunc<T> = (T) -> Foundation.Data? where T : Swift.Decodable, T : Swift.Encodable
+public enum DateFormats : Swift.String {
+  case displayDateFormat
+  case isoDateTimeSecFormat
+  case isoDateTimeMilliFormat
+  case isoDateTimeMinFormat
+  case yearDayDateFormat
+  case displayDateFormat2
+  case displayDateFormat3
+  case dateFormat2
+  case dateFormat3
+  case dateFormat4
+  case dateFormat5
+  case dateFormat7
+  case dateFormat8
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class EncodingFunctions {
+  public static let shared: CovaticUtilities.EncodingFunctions
+  public var jsonEncoderSnakeDate: Foundation.JSONEncoder {
+    get
+    set
+  }
+  public var jsonDecoderSnakeDateSec: Foundation.JSONDecoder {
+    get
+    set
+  }
+  public var jsonEncoderISODate: Foundation.JSONEncoder {
+    get
+    set
+  }
+  public var jsonDecoderISODate: Foundation.JSONDecoder {
+    get
+    set
+  }
+  public var jsonEncoderBase: Foundation.JSONEncoder {
+    get
+    set
+  }
+  public var jsonDecoderBase: Foundation.JSONDecoder {
+    get
+    set
+  }
+  public func encode<T>(collection: T, encoding: Swift.String.Encoding = .utf8) -> Swift.String? where T : Swift.Encodable
+  public func encodeDate<T>(collection: T, encoding: Swift.String.Encoding = .utf8) -> Swift.String? where T : Swift.Encodable
+  public func encodeSnakeDate<T>(collection: T, encoding: Swift.String.Encoding = .utf8) -> Swift.String? where T : Swift.Encodable
+  public func encode<T>(object: T) -> Foundation.Data? where T : Swift.Encodable
+  public func decode<T>(object: T.Type, data: Foundation.Data) -> T? where T : Swift.Decodable
+  public func decodeBasic<T>(object: T.Type, data: Foundation.Data) -> T? where T : Swift.Decodable
+  public func encodeWithDate<T>(object: T) -> Foundation.Data? where T : Swift.Encodable
+  public func encodeWithDateISO<T>(object: T) -> Foundation.Data? where T : Swift.Encodable
+  public func decodeWithDateISO<T>(object: T.Type, data: Foundation.Data) -> T? where T : Swift.Decodable
+  public func getStringFromISO(date: Foundation.Date) -> Swift.String?
+  public func getISODateFrom(string: Swift.String) -> Foundation.Date?
+  @objc deinit
+}
+public struct ActivityEvent : Swift.Hashable, Swift.Codable {
+  public let activityType: CovaticUtilities.ActivityEventType
+  public let timeStamp: Foundation.Date
+  public let confidence: Swift.Int?
+  public var timezoneId: Swift.String?
+  public init(activityType: CovaticUtilities.ActivityEventType, timeStamp: Foundation.Date, confidence: Swift.Int?, timezoneId: Swift.String? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case timeStamp
+    case confidence
+    case timezoneId
+    case activityType
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public static func getMatchingPredicate(date: Foundation.Date?) -> Foundation.NSPredicate?
+  public static func getMatchingPredicate(endDate: Foundation.Date?) -> Foundation.NSPredicate?
+  public static func getMatchingPredicate(fromDate: Foundation.Date?, endDate: Foundation.Date?) -> Foundation.NSPredicate
+  public static func getMatchingPredicateStale(date: Foundation.Date) -> Foundation.NSPredicate
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: CovaticUtilities.ActivityEvent, b: CovaticUtilities.ActivityEvent) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension Swift.String {
+  public var boolValue: Swift.Bool {
+    get
+  }
+}
+extension Swift.String {
+  public var length: Swift.Int {
+    get
+  }
+}
+extension Swift.String {
+  public var localized: Swift.String {
+    get
+  }
+}
+extension Swift.String {
+  public func copyToPasteboard()
+  public var latinized: Swift.String {
+    get
+  }
+  public var bool: Swift.Bool? {
+    get
+  }
+  public var regexEscaped: Swift.String {
+    get
+  }
+  public var withoutSpacesAndNewLines: Swift.String {
+    get
+  }
+  public var isWhitespace: Swift.Bool {
+    get
+  }
+  public var isSpelledCorrectly: Swift.Bool {
+    get
+  }
+}
+extension Swift.Double {
+  public static var threepiate: Swift.Double {
+    get
+  }
+  public static var twosqrtpi: Swift.Double {
+    get
+  }
+  public static var twopithird: Swift.Double {
+    get
+  }
+  public static var zero: Swift.Double {
+    get
+  }
+  public static var minusOne: Swift.Double {
+    get
+  }
+  public static var one: Swift.Double {
+    get
+  }
+  public static var half: Swift.Double {
+    get
+  }
+  public static var third: Swift.Double {
+    get
+  }
+  public static var fourth: Swift.Double {
+    get
+  }
+  public static var twothirds: Swift.Double {
+    get
+  }
+  public static var twoopi: Swift.Double {
+    get
+  }
+  public static var pithirds: Swift.Double {
+    get
+  }
+  public static var pifourth: Swift.Double {
+    get
+  }
+  public static var threepifourth: Swift.Double {
+    get
+  }
+  public static var eulergamma: Swift.Double {
+    get
+  }
+  public static var sqrtpi: Swift.Double {
+    get
+  }
+  public static var lnsqrt2: Swift.Double {
+    get
+  }
+  public static var sqrt2: Swift.Double {
+    get
+  }
+  public static var sqrt2piinv: Swift.Double {
+    get
+  }
+  public static var sqrt2Opi: Swift.Double {
+    get
+  }
+  public static var lnsqrtpi: Swift.Double {
+    get
+  }
+  public static var sqrt2pi: Swift.Double {
+    get
+  }
+  public static var lnsqrt2pi: Swift.Double {
+    get
+  }
+  public static var pihalf: Swift.Double {
+    get
+  }
+  public static var sqrtpihalf: Swift.Double {
+    get
+  }
+  public static var ln2: Swift.Double {
+    get
+  }
+  public static var ln10: Swift.Double {
+    get
+  }
+  public static var oo12: Swift.Double {
+    get
+  }
+  public static var oo18: Swift.Double {
+    get
+  }
+  public static var oo24: Swift.Double {
+    get
+  }
+  public static var twopi: Swift.Double {
+    get
+  }
+  public static var pisquared: Swift.Double {
+    get
+  }
+  public static var oo2pi: Swift.Double {
+    get
+  }
+  public static var lnpi: Swift.Double {
+    get
+  }
+  public static var oopi: Swift.Double {
+    get
+  }
+  public static var sqrt3: Swift.Double {
+    get
+  }
+  public static var oosqrtpi: Swift.Double {
+    get
+  }
+  public static var oo3: Swift.Double {
+    get
+  }
+  public static var oo6: Swift.Double {
+    get
+  }
+  public static var twoo3: Swift.Double {
+    get
+  }
+  public static var twoexpfourth: Swift.Double {
+    get
+  }
+  public static var sqrt6: Swift.Double {
+    get
+  }
+  public static var maxgamma: Swift.Double {
+    get
+  }
+}
+extension Swift.Float {
+  public static var threepiate: Swift.Float {
+    get
+  }
+  public static var twosqrtpi: Swift.Float {
+    get
+  }
+  public static var twopithird: Swift.Float {
+    get
+  }
+  public static var zero: Swift.Float {
+    get
+  }
+  public static var minusOne: Swift.Float {
+    get
+  }
+  public static var one: Swift.Float {
+    get
+  }
+  public static var half: Swift.Float {
+    get
+  }
+  public static var third: Swift.Float {
+    get
+  }
+  public static var fourth: Swift.Float {
+    get
+  }
+  public static var twothirds: Swift.Float {
+    get
+  }
+  public static var twoopi: Swift.Float {
+    get
+  }
+  public static var pithirds: Swift.Float {
+    get
+  }
+  public static var pifourth: Swift.Float {
+    get
+  }
+  public static var threepifourth: Swift.Float {
+    get
+  }
+  public static var eulergamma: Swift.Float {
+    get
+  }
+  public static var sqrtpi: Swift.Float {
+    get
+  }
+  public static var lnsqrt2: Swift.Float {
+    get
+  }
+  public static var sqrt2: Swift.Float {
+    get
+  }
+  public static var sqrt2piinv: Swift.Float {
+    get
+  }
+  public static var sqrt2Opi: Swift.Float {
+    get
+  }
+  public static var lnsqrtpi: Swift.Float {
+    get
+  }
+  public static var sqrt2pi: Swift.Float {
+    get
+  }
+  public static var lnsqrt2pi: Swift.Float {
+    get
+  }
+  public static var pihalf: Swift.Float {
+    get
+  }
+  public static var sqrtpihalf: Swift.Float {
+    get
+  }
+  public static var ln2: Swift.Float {
+    get
+  }
+  public static var ln10: Swift.Float {
+    get
+  }
+  public static var oo12: Swift.Float {
+    get
+  }
+  public static var oo18: Swift.Float {
+    get
+  }
+  public static var oo24: Swift.Float {
+    get
+  }
+  public static var twopi: Swift.Float {
+    get
+  }
+  public static var pisquared: Swift.Float {
+    get
+  }
+  public static var oo2pi: Swift.Float {
+    get
+  }
+  public static var lnpi: Swift.Float {
+    get
+  }
+  public static var oopi: Swift.Float {
+    get
+  }
+  public static var sqrt3: Swift.Float {
+    get
+  }
+  public static var oosqrtpi: Swift.Float {
+    get
+  }
+  public static var oo3: Swift.Float {
+    get
+  }
+  public static var oo6: Swift.Float {
+    get
+  }
+  public static var twoo3: Swift.Float {
+    get
+  }
+  public static var twoexpfourth: Swift.Float {
+    get
+  }
+  public static var sqrt6: Swift.Float {
+    get
+  }
+  public static var maxgamma: Swift.Float {
+    get
+  }
+}
+extension Swift.Float80 {
+  public static var threepiate: Swift.Float80 {
+    get
+  }
+  public static var twosqrtpi: Swift.Float80 {
+    get
+  }
+  public static var twopithird: Swift.Float80 {
+    get
+  }
+  public static var zero: Swift.Float80 {
+    get
+  }
+  public static var minusOne: Swift.Float80 {
+    get
+  }
+  public static var one: Swift.Float80 {
+    get
+  }
+  public static var half: Swift.Float80 {
+    get
+  }
+  public static var third: Swift.Float80 {
+    get
+  }
+  public static var fourth: Swift.Float80 {
+    get
+  }
+  public static var twothirds: Swift.Float80 {
+    get
+  }
+  public static var twoopi: Swift.Float80 {
+    get
+  }
+  public static var pithirds: Swift.Float80 {
+    get
+  }
+  public static var pifourth: Swift.Float80 {
+    get
+  }
+  public static var threepifourth: Swift.Float80 {
+    get
+  }
+  public static var eulergamma: Swift.Float80 {
+    get
+  }
+  public static var sqrtpi: Swift.Float80 {
+    get
+  }
+  public static var lnsqrt2: Swift.Float80 {
+    get
+  }
+  public static var sqrt2: Swift.Float80 {
+    get
+  }
+  public static var sqrt2piinv: Swift.Float80 {
+    get
+  }
+  public static var sqrt2Opi: Swift.Float80 {
+    get
+  }
+  public static var lnsqrtpi: Swift.Float80 {
+    get
+  }
+  public static var sqrt2pi: Swift.Float80 {
+    get
+  }
+  public static var lnsqrt2pi: Swift.Float80 {
+    get
+  }
+  public static var pihalf: Swift.Float80 {
+    get
+  }
+  public static var sqrtpihalf: Swift.Float80 {
+    get
+  }
+  public static var ln2: Swift.Float80 {
+    get
+  }
+  public static var ln10: Swift.Float80 {
+    get
+  }
+  public static var oo12: Swift.Float80 {
+    get
+  }
+  public static var oo18: Swift.Float80 {
+    get
+  }
+  public static var oo24: Swift.Float80 {
+    get
+  }
+  public static var twopi: Swift.Float80 {
+    get
+  }
+  public static var pisquared: Swift.Float80 {
+    get
+  }
+  public static var oo2pi: Swift.Float80 {
+    get
+  }
+  public static var lnpi: Swift.Float80 {
+    get
+  }
+  public static var oopi: Swift.Float80 {
+    get
+  }
+  public static var sqrt3: Swift.Float80 {
+    get
+  }
+  public static var oosqrtpi: Swift.Float80 {
+    get
+  }
+  public static var oo3: Swift.Float80 {
+    get
+  }
+  public static var oo6: Swift.Float80 {
+    get
+  }
+  public static var twoo3: Swift.Float80 {
+    get
+  }
+  public static var twoexpfourth: Swift.Float80 {
+    get
+  }
+  public static var sqrt6: Swift.Float80 {
+    get
+  }
+  public static var maxgamma: Swift.Float80 {
+    get
+  }
+}
+public class DataProcessingHelpers {
+  public init()
+  public func oneHotEncodeBasic<T>(data: [T?], includeNilValues: Swift.Bool = true, missingKeyPlaceholder: T? = nil) -> [[Swift.Int]] where T : Swift.Hashable
+  public func oneHotEncode<T>(data: [T?], includeNilValues: Swift.Bool = true, missingKeyPlaceholder: T? = nil) -> (columns: [T : Swift.Int], values: [[Swift.Int]]) where T : Swift.Hashable
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class BundleHandler {
+  public typealias DecodingFunc<T> = (T.Type, Foundation.Data) -> T? where T : Swift.Decodable, T : Swift.Encodable
+  public static let sharedInstance: CovaticUtilities.BundleHandler
+  public func loadJsonAsDataFrom(destination: Swift.String) -> Foundation.Data?
+  public func loadDataFrom(destination: Swift.String, withType: Swift.String) -> Foundation.Data?
+  public func loadJsonData<T>(destination: Swift.String, type: T.Type, decodingFunc: (T.Type, Foundation.Data) -> T?) -> T? where T : Swift.Decodable, T : Swift.Encodable
+  public func loadJsonDataFrom<T>(string: Swift.String, type: T.Type) -> T? where T : Swift.Decodable, T : Swift.Encodable
+  public func retrieveDataFromBundle(fileUrl: Foundation.URL?) -> Foundation.Data?
+  public func fetchCSVURL(fileName: Swift.String) -> Foundation.URL?
+  public func fetchCSVURL3(fileName: Swift.String) -> Foundation.URL?
+  @objc deinit
+}
+public struct CommonStats {
+  public static func factorial<T>(_ n: T) -> Swift.Int? where T : Swift.BinaryInteger
+  public static func factorial<T>(_ n: T) -> Swift.Double? where T : Swift.BinaryFloatingPoint
+  public static func choose<T>(n: T, k: T) -> Swift.Int where T : Swift.BinaryInteger
+  public static func choose2<T>(n: T, k: T) -> Swift.Double where T : Swift.BinaryFloatingPoint
+  public static func choose3<N, K>(n: N, k: K) -> Swift.Double where N : Swift.BinaryFloatingPoint, K : Swift.BinaryFloatingPoint
+  public static func choose<N, K>(n: N, k: K) -> Swift.Double where N : Swift.BinaryFloatingPoint, K : Swift.BinaryInteger
+  public static func mean<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryInteger
+  public static func mean<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryFloatingPoint
+  public static func variance<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryFloatingPoint
+  public static func sd<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryFloatingPoint
+  public static func sd<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryInteger
+  public static func pvariance<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryFloatingPoint
+  public static func variance<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryInteger
+  public static func pvariance<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryInteger
+  public static func median<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryFloatingPoint
+  public static func median<T>(_ data: [T]) -> Swift.Double? where T : Swift.BinaryInteger
+  public static func erfinv(_ y: Swift.Double) -> Swift.Double
+  public static func lsr(_ points: [[Swift.Double]]) -> [Swift.Double]
+}
+extension Swift.Bool {
+  public var int: Swift.Int {
+    get
+  }
+  public var string: Swift.String {
+    get
+  }
+}
+public enum CoreDataError : Swift.Error {
+  case cannotFetch(Swift.String)
+  case cannotSave(Swift.String)
+  case noEntityFound
+  case coreDataError(Swift.String)
+  case noContextError
+}
+public protocol CoreDataCoordinatorProtocol {
+  func fetchEntity<Entity>(withType: Entity.Type, predicate: Foundation.NSPredicate?, sortDescriptors: [Foundation.NSSortDescriptor]?, fetchLimit: Swift.Int?, completion: @escaping (Swift.Result<Entity, CovaticUtilities.CoreDataError>) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  func fetchEntities<Entity>(withType: Entity.Type, predicate: Foundation.NSPredicate?, sortDescriptors: [Foundation.NSSortDescriptor]?, fetchLimit: Swift.Int?, completion: @escaping (Swift.Result<[Entity], any Swift.Error>) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  func get<Entity>(entities: Entity.Type, predicate: Foundation.NSPredicate?, sortDescriptors: [Foundation.NSSortDescriptor]?, fetchLimit: Swift.Int?) -> [Entity]? where Entity : CovaticUtilities.ManagedObjectConvertible
+  func insert<Entity>(entity: Entity) where Entity : CovaticUtilities.ManagedObjectConvertible
+  func insert<Entity>(entities: [Entity], completion: @escaping ((any Swift.Error)?) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  func countRequest<Entity>(withType: Entity.Type, predicate: Foundation.NSPredicate?, completion: @escaping (Swift.Result<Swift.Int, any Swift.Error>) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  func countRequest<Entity>(entity: Entity.Type, predicate: Foundation.NSPredicate?) -> Swift.Int where Entity : CovaticUtilities.ManagedObjectConvertible
+  func delete<Entity>(entity: Entity.Type, predicate: Foundation.NSPredicate?) where Entity : CovaticUtilities.ManagedObjectConvertible
+  func delete<Entity>(entities: Entity.Type, predicate: Foundation.NSPredicate?, sortDescriptors: [Foundation.NSSortDescriptor]?, fetchLimit: Swift.Int?, completion: @escaping (Swift.Result<Swift.Bool, any Swift.Error>) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+}
+extension Swift.String {
+  public var nsString: Foundation.NSString {
+    get
+  }
+  public var fullNSRange: Foundation.NSRange {
+    get
+  }
+  public var lastPathComponent: Swift.String {
+    get
+  }
+  public var pathExtension: Swift.String {
+    get
+  }
+  public var deletingLastPathComponent: Swift.String {
+    get
+  }
+  public var deletingPathExtension: Swift.String {
+    get
+  }
+  public var pathComponents: [Swift.String] {
+    get
+  }
+  public func range(from nsRange: Foundation.NSRange) -> Swift.Range<Swift.String.Index>
+  public func nsRange(from range: Swift.Range<Swift.String.Index>) -> Foundation.NSRange
+  public func appendingPathExtension(_ str: Swift.String) -> Swift.String?
+  public subscript(bounds: Foundation.NSRange) -> Swift.Substring {
+    get
+  }
+}
+public class ThreadSafeDictionary<ElementKey, ElementValue> where ElementKey : Swift.Hashable {
+  public init()
+  convenience public init(_ dict: [ElementKey : ElementValue])
+  public func insert(key: ElementKey, value: ElementValue)
+  public func remove(key: ElementKey) -> ElementValue?
+  public func removeAll()
+  public func fetchValueFor(key: ElementKey) -> ElementValue?
+  public func getAllKeys() -> [ElementKey]?
+  public func getAllValues() -> [ElementValue]?
+  public func getCopy() -> [ElementKey : ElementValue]?
+  @objc deinit
+}
+extension CovaticUtilities.ThreadSafeDictionary where ElementValue : Swift.Comparable {
+  public func filter(key: ElementValue) -> [ElementKey : ElementValue]?
+}
+extension CovaticUtilities.ThreadSafeDictionary where ElementKey : Swift.Decodable, ElementKey : Swift.Encodable, ElementValue : Swift.Decodable, ElementValue : Swift.Encodable {
+  public func contains(_ element: ElementKey) -> Swift.Bool
+}
+public enum MathsUtilsError : Swift.Error {
+  case divideByZero
+  case invalidInput
+  public static func == (a: CovaticUtilities.MathsUtilsError, b: CovaticUtilities.MathsUtilsError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum ClusterType : Swift.String {
+  case vanilla
+  case proto
+  case core
+  case outer
+  case temporal
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class MultiSTDBSCAN2<T> where T : CovaticUtilities.MultiClusterProtocol {
+  public var eps: Swift.Double
+  public var minPts: Swift.Int
+  public init(eps: Swift.Double, minPts: Swift.Int)
+  public func clusterFor(clusterType: CovaticUtilities.ClusterType, points: [T], distFunction: ((Swift.Double, T, [T]) -> [T])? = nil) -> (clusters: [CovaticUtilities.NodeCluster<T>], noiseCluster: CovaticUtilities.NoiseCluster<T>)
+  public func cluster(clusterType: CovaticUtilities.ClusterType, points: [T], distFunction: ((Swift.Double, T, [T]) -> [T])? = nil) -> (clusters: [CovaticUtilities.MultiCluster<T>], noiseCluster: CovaticUtilities.NoiseCluster<T>)
+  @objc deinit
+}
+public func calculateBinIndex(value: Swift.Double, start: Swift.Double, binWidth: Swift.Double) throws -> Swift.Int
+public func calculateFractionOfBin(value: Swift.Double, start: Swift.Double, binWidth: Swift.Double) throws -> Swift.Double
+public func normaliseRanges(inputRanges: [CovaticUtilities.WooRange], start: Swift.Double, end: Swift.Double, binWidth: Swift.Double) -> [CovaticUtilities.WooRange]
+public func rangesToHistogram(inputRanges: [CovaticUtilities.WooRange], start: Swift.Double, end: Swift.Double, binWidth: Swift.Double) throws -> [Swift.Double]
+public typealias ContainerTestStoreType = (CovaticUtilities.TestStoreType)
+public typealias containerInitalisation = (Swift.String, Foundation.URL, CovaticUtilities.ErrorHandler?) -> CoreData.NSPersistentContainer?
+public struct SDCovaticLogsList : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SDCovaticLog : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum BayesError : Swift.Error {
+  case unsupportedPriors
+  case unsupportedGivens
+  case badParams
+  case emptyArray
+  public static func == (a: CovaticUtilities.BayesError, b: CovaticUtilities.BayesError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13.0, *)
+public class ProcessHaukNym {
+  public init()
+  public func process(name: Swift.String, priors: [Swift.Int : Swift.Double] = [0: 0.5, 1: 0.5], given: [Swift.Int : [Swift.Double]]?) throws -> [Swift.Int : Swift.Double]?
+  @objc deinit
+}
+public func softmax(_ x: [Swift.Float]) -> [Swift.Float]
+public func differentiate(hist: [Swift.Double]) -> [Swift.Double]
+public func getWoosActualFrom(windows: inout CovaticUtilities.WooWindows, onDate: Foundation.Date)
+public func createWoosActualFrom(baseWindows: [CovaticUtilities.BaseWindow], onDates: [Foundation.Date]) -> [Foundation.Date : [CovaticUtilities.ActualWindow]]
+public func createWoosFrom(baseWindows: [CovaticUtilities.BaseWindow], onDates: [Foundation.Date]) -> CovaticUtilities.WooWindows
+public func getWoosUTCActualFrom(windows: inout CovaticUtilities.WooWindows, onDate: Foundation.Date)
+public func createWoosUTCFrom(baseWindows: [CovaticUtilities.BaseWindow], onDates: [Foundation.Date]) -> CovaticUtilities.WooWindows
+public let R: Swift.Int
+public var rTimesCPS: Swift.Double {
+  get
+}
+public var rDivCPS: Swift.Double {
+  get
+}
+public func getX(degrees: Swift.Double) -> Swift.Double
+public func getY(degrees: Swift.Double) -> Swift.Double
+public func getLongitude(x: Swift.Double) -> Swift.Double
+public func getLatitude(y: Swift.Double) -> Swift.Double
+public func radians<T>(degrees: T) -> T where T : Swift.FloatingPoint
+public func degrees<T>(radians: T) -> T where T : Swift.FloatingPoint
+public var cps: Swift.Double {
+  get
+}
+public func hypotenuse(_ a: Swift.Double, _ b: Swift.Double) -> Swift.Double
+extension Foundation.Bundle {
+  public static var appName: Swift.String {
+    get
+  }
+  public static var appVersion: Swift.String {
+    get
+  }
+  public static var appBuild: Swift.String {
+    get
+  }
+  public static var identifier: Swift.String {
+    get
+  }
+}
+public class StateStorage {
+  public static let sharedInstance: CovaticUtilities.StateStorage
+  public static let testInstance: CovaticUtilities.StateStorage?
+  public init(userDefaults: Foundation.UserDefaults)
+  public func storeAsData<T>(key: Swift.String, value: T, postNotification: CovaticUtilities.PostNotification? = nil, encodingFunc: ((T) -> Foundation.Data?) = EncodingFunctions.shared.encode) where T : Swift.Decodable, T : Swift.Encodable
+  public func retrieveFromData<T>(key: Swift.String, value: T.Type, decodingFunc: ((T.Type, Foundation.Data) -> T?) = EncodingFunctions.shared.decode) -> T? where T : Swift.Decodable, T : Swift.Encodable
+  public func store<T>(key: Swift.String, value: T, postNotification: CovaticUtilities.PostNotification? = nil)
+  public func retrieve<T>(key: Swift.String, value: T.Type) -> T?
+  public func synchronize()
+  public func deleteObjectWith(key: Swift.String)
+  @objc deinit
+}
+public func retrieveImageFromDocuments(withFileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType) -> UIKit.UIImage?
+public func retrieveDataFromDocuments(withFileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType) -> Foundation.Data?
+public func retrieveData(withURL: Foundation.URL) -> Foundation.Data?
+public func deleteDataAt(fileURL: Foundation.URL)
+public func getDocumentsDirectory() -> Foundation.URL
+public func getFileUrl(fileName: Swift.String) -> Foundation.URL?
+public enum FileExtensionType : Swift.String {
+  case json
+  case text
+  case zip
+  case png
+  case jpg
+  case jpeg
+  case gif
+  case mp4
+  case mp3
+  case mov
+  public func appendingPathExtension() -> Swift.String
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension Foundation.Date {
+  public func toIsoDateTimeSecDouble() -> Swift.Double
+  public static func - (recent: Foundation.Date, previous: Foundation.Date) -> (month: Swift.Int?, day: Swift.Int?, hour: Swift.Int?, minute: Swift.Int?, second: Swift.Int?)
+  public static func - (recent: Foundation.Date, previous: Foundation.Date) -> (Foundation.DateComponents?)
+  public static func - (lhs: Foundation.Date, rhs: Foundation.Date) -> Foundation.TimeInterval
+  public func adding(minutes: Swift.Int) -> Foundation.Date?
+  public func subtract(minutes: Swift.Int) -> Foundation.Date?
+}
+extension Swift.Double {
+  public func toIsoDateTimeSecDate() -> Foundation.Date
+}
+public func parseHTML(html: Swift.String) -> [Swift.String]
+public func parseHTMLMeta(htmlString: Swift.String) -> [Swift.String : Swift.String]?
+public enum TestStoreType {
+  case defaultInStore
+  case cqlInStore
+  public static func == (a: CovaticUtilities.TestStoreType, b: CovaticUtilities.TestStoreType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @available(iOS 13.0, *)
+public class TestCoreDataCoordinator : CovaticUtilities.CoreDataCoordinator {
+  override public init()
+  override public func initaliseCoreData(persistentContainer: CoreData.NSPersistentContainer?)
+  override public func initaliseCoreData(modelName: Swift.String, modelURL: Foundation.URL, errorHandler: CovaticUtilities.ErrorHandler?)
+  public func setTestStoreType(testStoreType: CovaticUtilities.TestStoreType)
+  public func deleteAllDataOfType<T>(entities: T.Type) where T : CovaticUtilities.ManagedObjectConvertible
+  @objc deinit
+}
+public typealias OperationCompletion = (_ data: Foundation.Data?, _ error: CovaticUtilities.NetworkError?) -> Swift.Void
+public enum NetworkError : Swift.Error {
+  case timeoutError
+  case securityError
+  case reachabilityError
+  case servserBusyError
+  case unknownError
+  case downloadError
+  case invalidURL
+  public static func == (a: CovaticUtilities.NetworkError, b: CovaticUtilities.NetworkError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 13.0.0, *)
+public struct NetworkOperationNew {
+}
+@_hasMissingDesignatedInitializers public class ClusteringManagerDemo {
+  public func runDBSCAN(clusterType: CovaticUtilities.ClusterType, locations: [CovaticUtilities.PointLocation], eps: Swift.Double, minPts: Swift.Int, completionHandler: @escaping () -> Swift.Void)
+  public func runDBSCAN(clusterType: CovaticUtilities.ClusterType, locations: [CovaticUtilities.PointLocation], eps: Swift.Double, minPts: Swift.Int)
+  public func recursiveDBSCAN2(eps: Swift.Double, minPts: Swift.Int) -> (CovaticUtilities.ClusterType, [CovaticUtilities.PointLocation], Swift.Int?) -> ([CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>]?, CovaticUtilities.NoiseCluster<CovaticUtilities.PointLocation>?)
+  @objc deinit
+}
+public struct XYCoord {
+  public let x: Swift.Double
+  public let y: Swift.Double
+  public init(x: Swift.Double, y: Swift.Double)
+  public init(location: CoreLocation.CLLocation)
+}
+public typealias peakActivityFetchFunc = (Foundation.Date, Foundation.Date) -> [CovaticUtilities.ActivityEvent]?
+@available(iOS 13.0, *)
+public func detectPeakActivitiesBetween(startDate: Foundation.Date = Date.distantPast, endDate: Foundation.Date = Date(), input: (Foundation.Date, Foundation.Date) -> [CovaticUtilities.ActivityEvent]?, mLag: Swift.Int = 5) -> [CovaticUtilities.ActivityPeak]?
+@_hasMissingDesignatedInitializers public class ThreadSafeArrayCached<Element> where Element : Swift.Decodable, Element : Swift.Encodable {
+  convenience public init(name: Swift.String)
+  public func replace(_ newArray: [Element])
+  public func removeLast() -> Element?
+  public func removeFirst() -> Element?
+  public func addtoArray(handler: Element)
+  public func append(_ element: Element)
+  public func append(_ elements: [Element])
+  public func insert(_ element: Element, at index: Swift.Int)
+  public func remove(at index: Swift.Int, completion: ((Element) -> Swift.Void)? = nil)
+  public func remove(where predicate: @escaping (Element) -> Swift.Bool, completion: (([Element]) -> Swift.Void)? = nil)
+  public func removeAll(completion: (([Element]?) -> Swift.Void)? = nil)
+  public func getCopy() -> [Element]?
+  @objc deinit
+}
+extension CovaticUtilities.ThreadSafeArrayCached where Element : Swift.Comparable {
+  public func filter(key: Element) -> [Element]?
+}
+open class DataStorageManager {
+  public init()
+  public func store(data: Foundation.Data, withFileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType) -> Foundation.URL?
+  public func retrieveData(fromFileName: Swift.String, withExtension: Swift.String) -> Foundation.Data?
+  public func deleteObject(from fileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType)
+  public func storeCodable<T>(object: T, withFileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType) -> Foundation.URL? where T : Swift.Encodable
+  public func retrieveCodable<T>(object: T.Type, fromFileName: Swift.String, withExtension: CovaticUtilities.FileExtensionType) -> T? where T : Swift.Decodable
+  @objc deinit
+}
+extension Swift.String {
+  public func urlEncode() -> Swift.String?
+  public var urlDecoded: Swift.String {
+    get
+  }
+  public var urlEncoded: Swift.String? {
+    get
+  }
+  public var isValidUrl: Swift.Bool {
+    get
+  }
+  public var isValidSchemedUrl: Swift.Bool {
+    get
+  }
+  public var isValidHttpsUrl: Swift.Bool {
+    get
+  }
+  public var isValidHttpUrl: Swift.Bool {
+    get
+  }
+  public var isValidFileUrl: Swift.Bool {
+    get
+  }
+  public var url: Foundation.URL? {
+    get
+  }
+  public func appendingPathComponent(_ str: Swift.String) -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class CovaticSharedStorage {
+  public var stateStorage: CovaticUtilities.StateStorage?
+  public static let sharedInstance: CovaticUtilities.CovaticSharedStorage
+  @objc deinit
+}
+extension Swift.Character {
+  public var isEmoji: Swift.Bool? {
+    get
+  }
+  public var int: Swift.Int? {
+    get
+  }
+  public var string: Swift.String {
+    get
+  }
+  public var lowercased: Swift.Character? {
+    get
+  }
+  public var uppercased: Swift.Character? {
+    get
+  }
+}
+extension Swift.Character {
+  public static func randomAlphanumeric() -> Swift.Character?
+}
+extension Swift.Character {
+  public static func * (lhs: Swift.Character, rhs: Swift.Int) -> Swift.String
+  public static func * (lhs: Swift.Int, rhs: Swift.Character) -> Swift.String
+}
+public struct ActivityPeak {
+  public let rawValue: Swift.Double
+  public let startTime: Foundation.Date
+  public var endTime: Foundation.Date?
+  public let activityType: CovaticUtilities.ActivityEventType
+  public var duration: Swift.Double
+  public init(rawValue: Swift.Double, startTime: Foundation.Date, endTime: Foundation.Date? = nil, activityType: CovaticUtilities.ActivityEventType, duration: Swift.Double = 0.0)
+}
+public class NodeCluster<T> where T : CovaticUtilities.MultiClusterProtocol {
+  public var isMainCluster: Swift.Bool
+  public var isWorkCluster: Swift.Bool
+  public var ishighFideltyVisitedPlace: Swift.Bool
+  public var isTemporalCluster: Swift.Bool
+  public var timeClusters: [CovaticUtilities.MultiCluster<CovaticUtilities.PointLocation>]
+  public var centerTime: Foundation.Date?
+  public var dayTimeClusters: [Swift.Int : [CovaticUtilities.Cluster<CovaticUtilities.TimeCluster>]]
+  public var dayTimeStamp: [Swift.Int : [Foundation.Date]]
+  public var temporalSlots: [Swift.Int : Swift.Int]
+  public var id: Swift.String
+  public var tileId: Swift.String?
+  public var postalCode: Swift.String?
+  public var seiCodes: [Swift.String : Swift.String]
+  public var semanticTags: [Swift.String]
+  public var hasSemanticTag: Swift.Bool
+  public var clusterType: CovaticUtilities.ClusterType?
+  public var residenceOnDates: Swift.Set<Foundation.Date>
+  public var isHomeResidence: Swift.Bool
+  public var hasResidenceTag: Swift.Bool
+  public var points: [T]
+  public var centerPoint: T?
+  public var outerPoint: T?
+  public var stDev: Swift.Double
+  public var mean: Swift.Double
+  public var coreNodes: [CovaticUtilities.NodeCluster<T>]
+  public var outerNodes: [CovaticUtilities.NodeCluster<T>]
+  public var mClusterRadius: Swift.Double?
+  public var clusterRadius: Swift.Double? {
+    get
+  }
+  public func getNodesArray() -> (core: [CovaticUtilities.NodeCluster<T>]?, outer: [CovaticUtilities.NodeCluster<T>]?)
+  public func getAllNodes() -> [CovaticUtilities.NodeCluster<T>]
+  public func coreNodesCount() -> Swift.Int
+  public var centerPointName: Swift.String?
+  public var centerPointPostCode: Swift.String?
+  public var centerPointLocality: Swift.String?
+  public init(id: Swift.String? = nil)
+  public func getMatchingPredicate() -> Foundation.NSPredicate
+  public static func getMatchingTypePredicate(clusterType: CovaticUtilities.ClusterType) -> Foundation.NSPredicate
+  public static func getMatchingResidenceTagsPredicate() -> Foundation.NSPredicate
+  public static func getMatchingPredicate(tileIds: [Swift.String]) -> Foundation.NSPredicate
+  public static func getMatchingPredicate(semanticTags: [Swift.String]) -> Foundation.NSPredicate
+  public static func getMatchinghasSemanticTagPredicate() -> Foundation.NSPredicate
+  @objc deinit
+}
+public class TaggingClusters {
+  public init()
+  public func getHiFiPlaces(temporalNodeClusters: [CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>]) -> [CovaticUtilities.NodeCluster<CovaticUtilities.PointLocation>]?
+  @objc deinit
+}
+@objc public class CodableImage : ObjectiveC.NSObject, Swift.Codable {
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case image
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  final public let image: UIKit.UIImage?
+  public init(image: UIKit.UIImage)
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+public struct InActivityRange {
+  public let startTime: Foundation.Date
+  public var endtime: Foundation.Date?
+  public var duration: Swift.Double?
+  public var timezoneId: Swift.String?
+  public init(startTime: Foundation.Date, endtime: Foundation.Date? = nil, duration: Swift.Double? = nil, timezoneId: Swift.String? = nil)
+}
+public struct LocationRange {
+  public let startTime: Foundation.Date
+  public let pointLocation: CovaticUtilities.PointLocation
+  public var endtime: Foundation.Date?
+  public var duration: Swift.Double?
+  public var timezoneId: Swift.String?
+  public init(startTime: Foundation.Date, pointLocation: CovaticUtilities.PointLocation, endtime: Foundation.Date? = nil, duration: Swift.Double? = nil, timezoneId: Swift.String? = nil)
+}
+public struct ActivityRange : Swift.Codable {
+  public let startTime: Foundation.Date
+  public var endtime: Foundation.Date?
+  public var timezoneId: Swift.String?
+  public var type: CovaticUtilities.ActivityEventType
+  public init(startTime: Foundation.Date, endtime: Foundation.Date? = nil, timezoneId: Swift.String? = nil, type: CovaticUtilities.ActivityEventType)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case startTime
+    case endtime
+    case timezoneId
+    case type
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ConnectivityRange : Swift.Codable {
+  public let startTime: Foundation.Date
+  public var endtime: Foundation.Date?
+  public var timezoneId: Swift.String?
+  public var type: CovaticUtilities.ConnectivityStatus
+  public init(startTime: Foundation.Date, endtime: Foundation.Date? = nil, timezoneId: Swift.String? = nil, type: CovaticUtilities.ConnectivityStatus)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case startTime
+    case endtime
+    case timezoneId
+    case type
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum ConnectivityStatus : Swift.String, Swift.Codable {
+  case notConnected
+  case wiFi
+  case cellular
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ActivityEventType : Swift.String, Swift.Hashable, Swift.Codable {
+  case unknown
+  case stationary
+  case walking
+  case running
+  case cycling
+  case automotive
+  public func getActivityValue() -> Swift.Double
+  public static func createActivityEventfrom(value: Swift.Double) -> CovaticUtilities.ActivityEventType
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension Swift.String {
+  public func stripEmojis() -> Swift.String
+}
+extension Swift.String {
+  public var containsOnlyDigits: Swift.Bool {
+    get
+  }
+  public var containsOnlyLetters: Swift.Bool {
+    get
+  }
+  public var isAlphaNumeric: Swift.Bool {
+    get
+  }
+}
+extension Swift.String {
+  public func trimmed() -> Swift.String
+}
+extension Swift.String {
+  public var isDigitsOnly: Swift.Bool {
+    get
+  }
+}
+extension Swift.String {
+  public subscript(i: Swift.Int) -> Swift.Character {
+    get
+  }
+  public subscript(bounds: Swift.CountableRange<Swift.Int>) -> Swift.Substring {
+    get
+  }
+  public subscript(bounds: Swift.CountableClosedRange<Swift.Int>) -> Swift.Substring {
+    get
+  }
+  public subscript(bounds: Swift.CountablePartialRangeFrom<Swift.Int>) -> Swift.Substring {
+    get
+  }
+  public subscript(bounds: Swift.PartialRangeThrough<Swift.Int>) -> Swift.Substring {
+    get
+  }
+  public subscript(bounds: Swift.PartialRangeUpTo<Swift.Int>) -> Swift.Substring {
+    get
+  }
+}
+extension Swift.String {
+  public func starts(with prefix: Swift.String, caseSensitive: Swift.Bool = true) -> Swift.Bool
+  @discardableResult
+  public mutating func latinize() -> Swift.String
+  public func contains(_ string: Swift.String, caseSensitive: Swift.Bool = true) -> Swift.Bool
+  public func count(of string: Swift.String, caseSensitive: Swift.Bool = true) -> Swift.Int
+  @discardableResult
+  public mutating func camelize() -> Swift.String
+  public func wordCount() -> Swift.Int
+  public var wordCountByRegex: Swift.Int {
+    get
+  }
+  public func words() -> [Swift.String]
+  public func unicodeArray() -> [Swift.Int]
+  public func mostCommonCharacter() -> Swift.Character?
+  public var isNumeric: Swift.Bool {
+    get
+  }
+}
+extension Swift.String {
+  public static let sentenceEnd: Swift.String
+  public func tokenize() -> [Swift.String]
+}
+extension Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+public class CoreDataCoordinator : CovaticUtilities.CoreDataCoordinatorProtocol {
+  public init()
+  public func initaliseCoreData(persistentContainer: CoreData.NSPersistentContainer?)
+  public func initaliseCoreData(modelName: Swift.String, modelURL: Foundation.URL, errorHandler: CovaticUtilities.ErrorHandler?)
+  public func fetchEntity<Entity>(withType: Entity.Type, predicate: Foundation.NSPredicate? = nil, sortDescriptors: [Foundation.NSSortDescriptor]? = nil, fetchLimit: Swift.Int? = nil, completion: @escaping (Swift.Result<Entity, CovaticUtilities.CoreDataError>) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func fetchEntities<Entity>(withType: Entity.Type, predicate: Foundation.NSPredicate? = nil, sortDescriptors: [Foundation.NSSortDescriptor]? = nil, fetchLimit: Swift.Int? = nil, completion: @escaping (Swift.Result<[Entity], any Swift.Error>) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func get<Entity>(entity: Entity.Type, predicate: Foundation.NSPredicate? = nil, sortDescriptors: [Foundation.NSSortDescriptor]? = nil) -> Entity? where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func get<Entity>(entities: Entity.Type, predicate: Foundation.NSPredicate? = nil, sortDescriptors: [Foundation.NSSortDescriptor]? = nil, fetchLimit: Swift.Int? = nil) -> [Entity]? where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func countRequest<Entity>(entity: Entity.Type, predicate: Foundation.NSPredicate?) -> Swift.Int where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func insert<Entity>(entity: Entity) where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func updateEntity<Entity>(entity: Entity, predicate: Foundation.NSPredicate, sortDescriptors: [Foundation.NSSortDescriptor]? = nil, fetchLimit: Swift.Int? = nil, completion: @escaping ((any Swift.Error)?) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectUpdateable
+  public func updateAlt<Entity>(type: Entity.Type, entity: Entity, predicate: Foundation.NSPredicate?) where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func update<Entity>(entity: Entity, predicate: Foundation.NSPredicate, sortDescriptors: [Foundation.NSSortDescriptor]? = nil, fetchLimit: Swift.Int? = nil) where Entity : CovaticUtilities.ManagedObjectUpdateable
+  public func overwrite<Entity>(entity: Entity, predicate: Foundation.NSPredicate, sortDescriptors: [Foundation.NSSortDescriptor]?, fetchLimit: Swift.Int?) where Entity : CovaticUtilities.ManagedObjectOverwritable
+  public func delete<Entity>(entity: Entity.Type, predicate: Foundation.NSPredicate?) where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func delete<Entity>(entities: Entity.Type, predicate: Foundation.NSPredicate?, sortDescriptors: [Foundation.NSSortDescriptor]? = nil, fetchLimit: Swift.Int? = nil, completion: @escaping (Swift.Result<Swift.Bool, any Swift.Error>) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func insert<Entity>(entity: Entity, completion: @escaping ((any Swift.Error)?) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func insert<Entity>(entities: [Entity], completion: @escaping ((any Swift.Error)?) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  public func countRequest<Entity>(withType: Entity.Type, predicate: Foundation.NSPredicate? = nil, completion: @escaping (Swift.Result<Swift.Int, any Swift.Error>) -> Swift.Void) where Entity : CovaticUtilities.ManagedObjectConvertible
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SystemUtilities {
+  public static func getWifiSignalStrength() -> Swift.Double
+  public static var batteryLevel: Swift.Float {
+    get
+  }
+  public static var batteryState: UIKit.UIDevice.BatteryState {
+    get
+  }
+  public static var deviceModel: Swift.String {
+    get
+  }
+  public static func getdeviceName(isDebug: Swift.Bool) -> Swift.String
+  public static var deviceNameActual: Swift.String? {
+    get
+  }
+  public static var bundleIdentifier: Swift.String {
+    get
+  }
+  public static var clientAppName: Swift.String {
+    get
+  }
+  public static var systemName: Swift.String {
+    get
+  }
+  public static var deviceOrientation: UIKit.UIDeviceOrientation {
+    get
+  }
+  public static var systemVersion: Swift.String {
+    get
+  }
+  public static var clientAppVersion: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public enum PointStatus : Swift.String {
+  case noise
+  case belongsCluster
+  case unknown
+  case borderPoint
+  case corePoint
+  case neighbour
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol MultiClusterProtocol : Swift.Hashable {
+  var location: CoreLocation.CLLocation { get }
+  var timeStamp: Foundation.Date { get }
+  var xyPosition: CovaticUtilities.XYCoord { get }
+  mutating func setPointStaus(type: CovaticUtilities.ClusterType, status: CovaticUtilities.PointStatus)
+  func getPointStaus(type: CovaticUtilities.ClusterType) -> CovaticUtilities.PointStatus
+  var clusterReference: Swift.String? { get set }
+}
+public class NoiseCluster<T> where T : CovaticUtilities.MultiClusterProtocol {
+  public var clusterType: CovaticUtilities.ClusterType?
+  public var points: [T]
+  public init(clusterType: CovaticUtilities.ClusterType? = nil)
+  public static func getMatchingTypePredicate(clusterType: CovaticUtilities.ClusterType) -> Foundation.NSPredicate
+  @objc deinit
+}
+public class MultiCluster<T> where T : CovaticUtilities.MultiClusterProtocol {
+  public var id: Swift.String
+  public var tileId: Swift.String?
+  public var postalCode: Swift.String?
+  public var livesIn: Swift.String?
+  public var seiCodes: [Swift.String : Swift.String]
+  public var semanticTags: [Swift.String]
+  public var hasSemanticTag: Swift.Bool
+  public var clusterType: CovaticUtilities.ClusterType?
+  public var residenceOnDates: Swift.Set<Foundation.Date>
+  public var isHomeResidence: Swift.Bool
+  public var hasResidenceTag: Swift.Bool
+  public var points: [T]
+  public var centerPoint: T?
+  public var outerPoint: T?
+  public var stDev: Swift.Double
+  public var isMainCluster: Swift.Bool
+  public var isWorkCluster: Swift.Bool
+  public var ishighFideltyVisitedPlace: Swift.Bool
+  public var isTemporalCluster: Swift.Bool
+  public var timeClusters: [CovaticUtilities.MultiCluster<CovaticUtilities.PointLocation>]
+  public var centerTime: Foundation.Date?
+  public var dayTimeClusters: [Swift.Int : [CovaticUtilities.Cluster<CovaticUtilities.TimeCluster>]]
+  public var dayTimeStamp: [Swift.Int : [Foundation.Date]]
+  public var morningTemporalSlots: [Swift.Int : Swift.Int]
+  public var afternoonTemporalSlots: [Swift.Int : Swift.Int]
+  public var mClusterRadius: Swift.Double?
+  public var clusterRadius: Swift.Double? {
+    get
+  }
+  public var centerPointName: Swift.String?
+  public var centerPointPostCode: Swift.String?
+  public var centerPointLocality: Swift.String?
+  public init(id: Swift.String? = nil)
+  public func getMatchingPredicate() -> Foundation.NSPredicate
+  public static func getMatchingTypePredicate(clusterType: CovaticUtilities.ClusterType) -> Foundation.NSPredicate
+  public static func getMatchingResidenceTagsPredicate() -> Foundation.NSPredicate
+  public static func getMatchingPredicate(tileIds: [Swift.String]) -> Foundation.NSPredicate
+  public static func getMatchingPredicate(semanticTags: [Swift.String]) -> Foundation.NSPredicate
+  public static func getMatchinghasSemanticTagPredicate() -> Foundation.NSPredicate
+  public static func getMatchingHasTagPredicate() -> Foundation.NSPredicate
+  public static func getMatchingHighFideltyPredicate() -> Foundation.NSPredicate
+  public static func getMatchingCoreClustersPredicate() -> Foundation.NSPredicate
+  @objc deinit
+}
+public class Cluster<T> where T : CovaticUtilities.PointClusterProtocol {
+  final public let id: Swift.String
+  public var pointStatus: CovaticUtilities.PointStatus
+  public var points: [T]
+  public var centerPoint: T?
+  public var centerPointName: Swift.String?
+  public var centerPointPostCode: Swift.String?
+  public var centerPointLocality: Swift.String?
+  public var timeClusters: [CovaticUtilities.Cluster<CovaticUtilities.TimeCluster>]
+  public var centerTime: Foundation.Date?
+  public var dayTimeClusters: [Swift.Int : [CovaticUtilities.Cluster<CovaticUtilities.TimeCluster>]]
+  public var dayTimeStamp: [Swift.Int : [Foundation.Date]]
+  public init()
+  @objc deinit
+}
+public protocol TemporalPointClusterProtocol : CovaticUtilities.PointClusterProtocol {
+  var timeStamp: Foundation.Date { get }
+}
+public protocol PointClusterProtocol : Swift.Hashable {
+  var location: CoreLocation.CLLocation { get }
+  var pointStatus: CovaticUtilities.PointStatus { get set }
+  var xyPosition: CovaticUtilities.XYCoord { get }
+}
+public class TimeCluster : CovaticUtilities.TemporalPointClusterProtocol {
+  public static func == (lhs: CovaticUtilities.TimeCluster, rhs: CovaticUtilities.TimeCluster) -> Swift.Bool
+  public var location: CoreLocation.CLLocation
+  public var pointStatus: CovaticUtilities.PointStatus
+  public var dayTimeStamp: [Swift.Int : [Foundation.Date]]?
+  public var timeStamp: Foundation.Date
+  public var centerTime: Foundation.Date?
+  public init(location: CoreLocation.CLLocation, timeStamp: Foundation.Date)
+  public var xyPositionLocale: CovaticUtilities.XYCoord?
+  public var xyPosition: CovaticUtilities.XYCoord {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  @objc deinit
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor @preconcurrency public var deviceModel: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public func modelName() -> Swift.String
+}
+public class ThreadSafeArray<Element> {
+  public init()
+  convenience public init(_ array: [Element])
+  public func removeLast() -> Element?
+  public func removeFirst() -> Element?
+  public func addtoArray(handler: Element)
+  public func append(_ element: Element)
+  public func append(_ elements: [Element])
+  public func insert(_ element: Element, at index: Swift.Int)
+  public func remove(at index: Swift.Int, completion: ((Element) -> Swift.Void)? = nil)
+  public func remove(where predicate: @escaping (Element) -> Swift.Bool, completion: (([Element]) -> Swift.Void)? = nil)
+  public func removeAll(completion: (([Element]) -> Swift.Void)? = nil)
+  @objc deinit
+}
+public enum LogType : Swift.Int {
+  case debugLog
+  case timeLog
+  case errorLog
+  case dataLog
+  case runtimeLog
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class CovaticUtilsLogger {
+  public static let sharedInstance: CovaticUtilities.CovaticUtilsLogger?
+  public static var isDebug: Swift.Bool
+  final public func log(_ message: Swift.String, type: Swift.Int = -1)
+  @objc deinit
+}
+extension Swift.Double {
+  public var boolValue: Swift.Bool {
+    get
+  }
+}
+extension Swift.StringProtocol {
+  public func commonSuffix<T>(with aString: T, options: Swift.String.CompareOptions = []) -> Swift.String where T : Swift.StringProtocol
+  public func replacingOccurrences<Target, Replacement>(ofPattern pattern: Target, withTemplate template: Replacement, options: Swift.String.CompareOptions = [.regularExpression], range searchRange: Swift.Range<Self.Index>? = nil) -> Swift.String where Target : Swift.StringProtocol, Replacement : Swift.StringProtocol
+}
+public class CoreDataListener {
+  public init()
+  @objc deinit
+}
+extension Foundation.NSNotification.Name {
+  public static let CovaticPost: Foundation.Notification.Name
+}
+public func findRightGradientExtreme(gradLocalExtremes: [Swift.Double], hist: [Swift.Double], lowThreshold: Swift.Double) -> Swift.Double?
+public func GetWindowsOfOpportunity(hist: [Swift.Double], localExtremes: [CovaticUtilities.Extrema], diffHist: [Swift.Double], diffLocalExtremes: [CovaticUtilities.Extrema], diff2Hist: [Swift.Double]) -> [CovaticUtilities.BaseWindow]
+public class LRUCache<KeyType, ValueType> : Swift.Sequence, Swift.IteratorProtocol where KeyType : Swift.Hashable {
+  public func next() -> ValueType?
+  public init(maxSize: Swift.Int)
+  public var size: Swift.Int {
+    get
+  }
+  public func get(_ key: KeyType) -> ValueType?
+  public func set(_ key: KeyType, val: ValueType)
+  public func remove(_ key: KeyType)
+  public func removeAll()
+  public typealias Element = ValueType
+  public typealias Iterator = CovaticUtilities.LRUCache<KeyType, ValueType>
+  @objc deinit
+}
+public func + <T>(a: [Swift.String : T], b: [Swift.String : T]) -> [Swift.String : T]
+@_hasMissingDesignatedInitializers public class ThreadSafeDictionaryCached<ElementKey, ElementValue> where ElementKey : Swift.Decodable, ElementKey : Swift.Encodable, ElementKey : Swift.Hashable, ElementValue : Swift.Decodable, ElementValue : Swift.Encodable {
+  convenience public init(name: Swift.String)
+  public func replace(_ newDict: [ElementKey : ElementValue])
+  public func insert(key: ElementKey, value: ElementValue)
+  public func remove(key: ElementKey, completion: ((ElementValue?) -> Swift.Void)? = nil)
+  public func removeAll()
+  public func fetchValueFor(key: ElementKey, completion: @escaping (ElementValue?) -> Swift.Void)
+  public func getAllKeys(completion: @escaping ([ElementKey]?) -> Swift.Void)
+  public func getAllValues(completion: @escaping ([ElementValue]?) -> Swift.Void)
+  public func getAllValues(completion: @escaping ([ElementKey : ElementValue]?) -> Swift.Void)
+  @objc deinit
+}
+extension CovaticUtilities.ThreadSafeDictionaryCached where ElementValue : Swift.Comparable {
+  public func filter(key: ElementValue, completion: @escaping ([ElementKey : ElementValue]?) -> Swift.Void)
+}
+@available(iOS 14.0, *)
+public struct DemographicDataUnit {
+  public let demographicType: CovaticUtilities.DemographicData.DataClass
+  public let demographicProbs: [Swift.Int : Swift.Double]
+  public let resolutionMode: Swift.Int?
+}
+public enum SEICodeTypes {
+  case acorn(value: Swift.String)
+  case mosiac(value: Swift.String)
+  case other(value: Swift.String)
+}
+@available(iOS 14.0, *)
+public class DemographicData {
+  public enum DataClass : Swift.String, Swift.CaseIterable {
+    case gender
+    case age
+    public init?(rawValue: Swift.String)
+    @available(iOS 14.0, *)
+    public typealias AllCases = [CovaticUtilities.DemographicData.DataClass]
+    @available(iOS 14.0, *)
+    public typealias RawValue = Swift.String
+    nonisolated public static var allCases: [CovaticUtilities.DemographicData.DataClass] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init()
+  public func runPrediction(seiCode: CovaticUtilities.SEICodeTypes?, livesIn: Swift.String?, name: Swift.String?, given: [Swift.Int : [Swift.Double]]?) -> [CovaticUtilities.DemographicDataUnit]
+  @objc deinit
+}
+extension Swift.String {
+  public var isValidEmail: Swift.Bool {
+    get
+  }
+  public var isHeadphone: Swift.Bool {
+    get
+  }
+  public var isVehicle: Swift.Bool {
+    get
+  }
+  public var doesContainSpecialCharacter: Swift.Bool {
+    get
+  }
+  public var doesContainPunctuation: Swift.Bool {
+    get
+  }
+  public func matches(pattern: Swift.String) -> Swift.Bool
+  public func matches(regex: Foundation.NSRegularExpression, options: Foundation.NSRegularExpression.MatchingOptions = []) -> Swift.Bool
+  public static func ~= (lhs: Swift.String, rhs: Swift.String) -> Swift.Bool
+  public static func ~= (lhs: Swift.String, rhs: Foundation.NSRegularExpression) -> Swift.Bool
+  public func replacingOccurrences(of regex: Foundation.NSRegularExpression, with template: Swift.String, options: Foundation.NSRegularExpression.MatchingOptions = [], range searchRange: Swift.Range<Swift.String.Index>? = nil) -> Swift.String
+}
+extension Foundation.NSRegularExpression {
+  public func matches(in text: Swift.String) -> [Foundation.NSTextCheckingResult]
+}
+extension Swift.String {
+  public func matches(regex pattern: Swift.String) throws -> [Swift.String]
+}
+public class TextAnalysisCoordinator {
+  public init()
+  public func getBOWFeaturesStemmerized(text: [Swift.String]) -> [Swift.String : Swift.Int]
+  @objc deinit
+}
+extension CovaticUtilities.AppSharing.Operation : Swift.Equatable {}
+extension CovaticUtilities.AppSharing.Operation : Swift.Hashable {}
+extension CovaticUtilities.BinIndexError : Swift.Equatable {}
+extension CovaticUtilities.BinIndexError : Swift.Hashable {}
+extension CovaticUtilities.BinIndexError : Swift.RawRepresentable {}
+@available(iOS 13.0, *)
+extension CovaticUtilities.MobileProvisioning.Entitlements.Environment : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension CovaticUtilities.MobileProvisioning.Entitlements.Environment : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension CovaticUtilities.MobileProvisioning.Entitlements.Environment : Swift.RawRepresentable {}
+extension Foundation.Data.CompressionAlgorithm : Swift.Equatable {}
+extension Foundation.Data.CompressionAlgorithm : Swift.Hashable {}
+extension CovaticUtilities.CodingError : Swift.Equatable {}
+extension CovaticUtilities.CodingError : Swift.Hashable {}
+extension CovaticUtilities.DateFormats : Swift.Equatable {}
+extension CovaticUtilities.DateFormats : Swift.Hashable {}
+extension CovaticUtilities.DateFormats : Swift.RawRepresentable {}
+extension CovaticUtilities.ActivityEvent.CodingKeys : Swift.Equatable {}
+extension CovaticUtilities.ActivityEvent.CodingKeys : Swift.Hashable {}
+extension CovaticUtilities.ActivityEvent.CodingKeys : Swift.RawRepresentable {}
+extension CovaticUtilities.MathsUtilsError : Swift.Equatable {}
+extension CovaticUtilities.MathsUtilsError : Swift.Hashable {}
+extension CovaticUtilities.ClusterType : Swift.Equatable {}
+extension CovaticUtilities.ClusterType : Swift.Hashable {}
+extension CovaticUtilities.ClusterType : Swift.RawRepresentable {}
+extension CovaticUtilities.BayesError : Swift.Equatable {}
+extension CovaticUtilities.BayesError : Swift.Hashable {}
+extension CovaticUtilities.FileExtensionType : Swift.Equatable {}
+extension CovaticUtilities.FileExtensionType : Swift.Hashable {}
+extension CovaticUtilities.FileExtensionType : Swift.RawRepresentable {}
+extension CovaticUtilities.TestStoreType : Swift.Equatable {}
+extension CovaticUtilities.TestStoreType : Swift.Hashable {}
+extension CovaticUtilities.NetworkError : Swift.Equatable {}
+extension CovaticUtilities.NetworkError : Swift.Hashable {}
+extension CovaticUtilities.CodableImage.CodingKeys : Swift.Equatable {}
+extension CovaticUtilities.CodableImage.CodingKeys : Swift.Hashable {}
+extension CovaticUtilities.CodableImage.CodingKeys : Swift.RawRepresentable {}
+extension CovaticUtilities.ActivityRange.CodingKeys : Swift.Equatable {}
+extension CovaticUtilities.ActivityRange.CodingKeys : Swift.Hashable {}
+extension CovaticUtilities.ActivityRange.CodingKeys : Swift.RawRepresentable {}
+extension CovaticUtilities.ConnectivityRange.CodingKeys : Swift.Equatable {}
+extension CovaticUtilities.ConnectivityRange.CodingKeys : Swift.Hashable {}
+extension CovaticUtilities.ConnectivityRange.CodingKeys : Swift.RawRepresentable {}
+extension CovaticUtilities.ConnectivityStatus : Swift.Equatable {}
+extension CovaticUtilities.ConnectivityStatus : Swift.Hashable {}
+extension CovaticUtilities.ConnectivityStatus : Swift.RawRepresentable {}
+extension CovaticUtilities.ActivityEventType : Swift.RawRepresentable {}
+extension CovaticUtilities.PointStatus : Swift.Equatable {}
+extension CovaticUtilities.PointStatus : Swift.Hashable {}
+extension CovaticUtilities.PointStatus : Swift.RawRepresentable {}
+extension CovaticUtilities.LogType : Swift.Equatable {}
+extension CovaticUtilities.LogType : Swift.Hashable {}
+extension CovaticUtilities.LogType : Swift.RawRepresentable {}
+@available(iOS 14.0, *)
+extension CovaticUtilities.DemographicData.DataClass : Swift.Equatable {}
+@available(iOS 14.0, *)
+extension CovaticUtilities.DemographicData.DataClass : Swift.Hashable {}
+@available(iOS 14.0, *)
+extension CovaticUtilities.DemographicData.DataClass : Swift.RawRepresentable {}

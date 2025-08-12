@@ -1,0 +1,11 @@
+framework module CovaticUtilities {
+  umbrella header "CovaticUtilities.h"
+  export *
+
+  module * { export * }
+}
+
+module CovaticUtilities.Swift {
+  header "CovaticUtilities-Swift.h"
+  requires objc
+}
