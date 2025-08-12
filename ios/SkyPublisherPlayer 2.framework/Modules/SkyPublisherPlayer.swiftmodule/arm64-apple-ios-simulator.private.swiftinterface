@@ -1,0 +1,55 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios14.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -Onone -enable-experimental-feature OpaqueTypeErasure -module-name SkyPublisherPlayer
+import AEPAnalytics
+import AEPCore
+import AEPIdentity
+import AEPLifecycle
+import AEPSignal
+import AEPUserProfile
+import AVFoundation
+import AVKit
+import ComScore
+import CoreLocation
+import Dotmetrics
+import Foundation
+import GoogleInteractiveMediaAds
+import Reachability
+import SDWebImage
+import SerendipityLO
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor @preconcurrency public func setImage(withURL url: Foundation.URL)
+  @_Concurrency.MainActor @preconcurrency public func setImage(withString urlString: Swift.String)
+}
+public struct ExtractedJSONFeedTags : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol SkyFluidPlayerDelegate {
+  func onPlayerFinish()
+  func onPlayerClose()
+  func onPlayerFail(withError error: any Swift.Error)
+  func hideParentView()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @objc open class SkyFluidSDK : ObjectiveC.NSObject {
+  @_Concurrency.MainActor public static let `default`: SkyPublisherPlayer.SkyFluidSDK
+  @_Concurrency.MainActor public var isPlayerReady: Swift.Bool {
+    get
+  }
+  @objc @_Concurrency.MainActor open func configure(by zoneID: Swift.String)
+  @objc @_Concurrency.MainActor open func initCovatic(clientID: Swift.String, secretKey: Swift.String, baseURL: Swift.String)
+  @objc @_Concurrency.MainActor open func initIpsos(with apikey: Swift.String)
+  @objc @_Concurrency.MainActor open func initComscore(with projectID: Swift.String)
+  @objc @_Concurrency.MainActor open func setupEUConsent(_ euconsent: Swift.String)
+  @objc @_Concurrency.MainActor open func startPlayer(from controller: UIKit.UIViewController?, on view: UIKit.UIView)
+  @objc @_Concurrency.MainActor open func setFloatingPlayerPiPVisibility(_ shouldShow: Swift.Bool)
+  @objc @_Concurrency.MainActor open func updateIsPipModeClosed()
+  @objc @_Concurrency.MainActor open func removePlayer()
+  @objc deinit
+}
+extension SkyPublisherPlayer.SkyFluidSDK : Swift.Sendable {}
