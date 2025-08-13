@@ -55,6 +55,8 @@
 		66579B132E4B0C4C0094BCE2 /* SerendipityLO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579ACD2E4B0BD20094BCE2 /* SerendipityLO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		66579B162E4B0C4F0094BCE2 /* SkyPublisherPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579A9A2E4B0BC00094BCE2 /* SkyPublisherPlayer.framework */; };
 		66579B172E4B0C4F0094BCE2 /* SkyPublisherPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579A9A2E4B0BC00094BCE2 /* SkyPublisherPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66579B192E4B148B0094BCE2 /* SkyFluidModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 66579B182E4B148B0094BCE2 /* SkyFluidModule.m */; };
+		66579B1B2E4B149B0094BCE2 /* SkyFluidModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66579B1A2E4B149B0094BCE2 /* SkyFluidModule.swift */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -125,6 +127,8 @@
 		66579AD02E4B0BD20094BCE2 /* ComScore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ComScore.framework; sourceTree = "<group>"; };
 		66579AD22E4B0BD20094BCE2 /* Dotmetrics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dotmetrics.framework; sourceTree = "<group>"; };
 		66579AD42E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInteractiveMediaAds.framework; sourceTree = "<group>"; };
+		66579B182E4B148B0094BCE2 /* SkyFluidModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SkyFluidModule.m; path = skyFluidIntegration/SkyFluidModule.m; sourceTree = "<group>"; };
+		66579B1A2E4B149B0094BCE2 /* SkyFluidModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SkyFluidModule.swift; path = skyFluidIntegration/SkyFluidModule.swift; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = skyFluidIntegration/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = skyFluidIntegration/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -445,6 +449,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				66579B1A2E4B149B0094BCE2 /* SkyFluidModule.swift */,
+				66579B182E4B148B0094BCE2 /* SkyFluidModule.m */,
 				66579A9A2E4B0BC00094BCE2 /* SkyPublisherPlayer.framework */,
 				13B07FAE1A68108700A75B9A /* skyFluidIntegration */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -654,6 +660,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66579B1B2E4B149B0094BCE2 /* SkyFluidModule.swift in Sources */,
+				66579B192E4B148B0094BCE2 /* SkyFluidModule.m in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
