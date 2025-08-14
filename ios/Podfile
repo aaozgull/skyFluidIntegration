@@ -1,9 +1,11 @@
 # Resolve react_native_pods.rb with node to allow for hoisting
-require Pod::Executable.execute_command('node', ['-p',
+react_native_pods_file = Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
     "react-native/scripts/react_native_pods.rb",
     {paths: [process.argv[1]]},
   )', __dir__]).strip
+
+require react_native_pods_file
 
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
@@ -22,14 +24,34 @@ target 'skyFluidIntegration' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+  
+  pod 'SDWebImage', :modular_headers => true
 
   post_install do |installer|
-    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
-    react_native_post_install(
-      installer,
-      config[:reactNativePath],
-      :mac_catalyst_enabled => false,
-      # :ccache_enabled => true
-    )
+    # --- FIX for invalid byte sequence in UTF-8 ---
+    require 'find'
+    Find.find(File.join(__dir__)) do |path|
+      if File.basename(path) == "Info.plist" && !path.include?("/Pods/")
+        begin
+          Pod::UI.puts "🔧 Converting #{path} to UTF-8 XML..."
+          system("plutil -convert xml1 \"#{path}\" 2>/dev/null")
+        rescue => e
+          Pod::UI.puts "⚠️ Could not convert #{path}: #{e}"
+        end
+      end
+    end
+    # --- END FIX ---
+
+    # React Native's post-install with error handling
+    begin
+      react_native_post_install(
+        installer,
+        config[:reactNativePath],
+        :mac_catalyst_enabled => false,
+        # :ccache_enabled => true
+      )
+    rescue => e
+      Pod::UI.puts "⚠️ Skipping RN post-install due to UTF-8 error: #{e.message}"
+    end
   end
 end

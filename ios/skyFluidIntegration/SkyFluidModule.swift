@@ -22,13 +22,6 @@ class SkyFluidModule: NSObject {
     }
   }
 
-//   @objc func removePlayer() {
-//     SkyFluidSDK.default.removePlayer()
-//   }
-
-//   @objc func setPiPVisible(_ isVisible: Bool) {
-//     SkyFluidSDK.default.setFloatingPlayerPiPVisibility(isVisible)
-//   }
 
   @objc func removePlayer() {
     DispatchQueue.main.async {

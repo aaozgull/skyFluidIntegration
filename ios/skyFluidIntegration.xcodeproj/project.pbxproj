@@ -45,7 +45,6 @@
 		66579B092E4B0C430094BCE2 /* Dotmetrics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AD22E4B0BD20094BCE2 /* Dotmetrics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		66579B0A2E4B0C450094BCE2 /* GoogleInteractiveMediaAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC22E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */; };
 		66579B0B2E4B0C450094BCE2 /* GoogleInteractiveMediaAds.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC22E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		66579B0C2E4B0C470094BCE2 /* Pods_SkyPublisherPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC42E4B0BD20094BCE2 /* Pods_SkyPublisherPlayer.framework */; };
 		66579B0D2E4B0C470094BCE2 /* Pods_SkyPublisherPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC42E4B0BD20094BCE2 /* Pods_SkyPublisherPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		66579B0E2E4B0C490094BCE2 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC62E4B0BD20094BCE2 /* Reachability.framework */; };
 		66579B0F2E4B0C490094BCE2 /* Reachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66579AC62E4B0BD20094BCE2 /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -149,7 +148,6 @@
 				66579ADF2E4B0BD20094BCE2 /* ComScore.framework in Frameworks */,
 				66579B102E4B0C4A0094BCE2 /* SDWebImage.framework in Frameworks */,
 				66579B082E4B0C430094BCE2 /* Dotmetrics.framework in Frameworks */,
-				66579B0C2E4B0C470094BCE2 /* Pods_SkyPublisherPlayer.framework in Frameworks */,
 				66579AF32E4B0C310094BCE2 /* AEPAnalytics.framework in Frameworks */,
 				66579AE32E4B0BD20094BCE2 /* GoogleInteractiveMediaAds.framework in Frameworks */,
 				66579B122E4B0C4C0094BCE2 /* SerendipityLO.framework in Frameworks */,
@@ -828,7 +826,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -897,7 +898,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
